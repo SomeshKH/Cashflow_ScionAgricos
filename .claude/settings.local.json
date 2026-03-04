@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \":*)",
+      "Bash(find \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)\" -type f -name \"*.jsx\" -o -name \"*.js\" -o -name \"*.json\" -o -name \"*.css\" -o -name \"*.tsx\" -o -name \"*.ts\")",
+      "Bash(find \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)\" -type f)",
+      "Bash(python3 -c \":*)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(ls \"C:/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/\")",
+      "Bash(ls \"C:/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/app/\")",
+      "Bash(ls \"C:/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/styles/\")",
+      "Bash(python -:*)",
+      "Bash(ls -la \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/\")",
+      "Bash(ls -la \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/app/\")",
+      "Bash(ls -la \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/.claude/\")",
+      "Bash(ls -la \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/app/components/\")",
+      "Bash(ls -la \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/app/data/\")",
+      "Bash(ls \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/styles\")",
+      "Bash(ls \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/app/pages\")",
+      "Bash(head -50 \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/styles/index.css\")",
+      "Bash(ls -la \"/c/Users/Admin/OneDrive/Desktop/Cashflow New/src \\(2\\)/app/components/ui\")",
+      "Bash(pg_isready -h localhost -p 5432)",
+      "Bash(powershell.exe -Command \"Get-Service -Name ''*postgres*'' -ErrorAction SilentlyContinue | Select-Object Name,Status\")",
+      "Bash(powershell.exe -Command \"Get-Service | Where-Object {$_Name -like ''*sql*'' -or $_DisplayName -like ''*postgres*'' -or $_DisplayName -like ''*SQL*''} | Select-Object Name,DisplayName,Status\")",
+      "Bash(winget --version)",
+      "Bash(echo \"winget:$?\")",
+      "Bash(docker --version)",
+      "Bash(echo \"docker:$?\")",
+      "Bash(winget search postgresql)"
+    ]
+  }
+}
