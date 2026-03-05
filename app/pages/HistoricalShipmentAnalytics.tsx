@@ -23,6 +23,50 @@ export function HistoricalShipmentAnalytics() {
   const [selectedProduct, setSelectedProduct] = useState("all");
   const [selectedOrigin,  setSelectedOrigin]  = useState("all");
 
+  // ─── IMPORTANT: All hooks MUST be called before any conditional returns ─────
+
+  // Derived filter options
+  const uniqueYears    = useMemo(() => [...new Set(shipments.map(r => String(r.year)))].sort(), [shipments]);
+  const uniqueProducts = useMemo(() => [...new Set(shipments.map(r => r.product))].sort(), [shipments]);
+  const uniqueOrigins  = useMemo(() => [...new Set(shipments.map(r => r.origin))].sort(), [shipments]);
+
+  // Filtered table data
+  const filtered = useMemo(() =>
+    shipments.filter(r =>
+      (selectedYear    === "all" || String(r.year) === selectedYear) &&
+      (selectedProduct === "all" || r.product === selectedProduct) &&
+      (selectedOrigin  === "all" || r.origin  === selectedOrigin)
+    ),
+    [shipments, selectedYear, selectedProduct, selectedOrigin]
+  );
+
+  const totalRevenue = useMemo(() => filtered.reduce((s, r) => s + Number(r.revenue), 0), [filtered]);
+  const totalMargin  = useMemo(() => filtered.reduce((s, r) => s + Number(r.margin),  0), [filtered]);
+  const totalTx      = useMemo(() => filtered.reduce((s, r) => s + Number(r.transactions), 0), [filtered]);
+  const avgMarginPct = useMemo(() => totalRevenue > 0 ? ((totalMargin / totalRevenue) * 100).toFixed(1) : "—", [totalRevenue, totalMargin]);
+
+  // Chart data
+  const revenueData   = useMemo(() => yearlyTotals.map(y => ({ year: String(y.year), revenue: Number(y.revenue) })), [yearlyTotals]);
+  const costData      = useMemo(() => yearlyTotals.map(y => ({ year: String(y.year), cost:    Number(y.expense) })), [yearlyTotals]);
+  const profitPctData = useMemo(() => yearlyTotals.map(y => ({ year: String(y.year), profit:  Number(y.marginPct) })), [yearlyTotals]);
+
+  const revenueByProduct = useMemo(() => products.slice(0, 8).map(p => ({ product: p.product, revenue: Number(p.revenue) })), [products]);
+  const revenueByOrigin  = useMemo(() => origins.slice(0, 8).map(o  => ({ origin:  o.origin,  revenue: Number(o.revenue) })), [origins]);
+
+  const years       = useMemo(() => [...new Set(personData.map(p => String(p.year)))].sort(), [personData]);
+  const personNames = useMemo(() => [...new Set(personData.map(p => p.person))], [personData]);
+
+  const personComparisonData = useMemo(() => years.map(year => {
+    const row: Record<string, string | number> = { year };
+    personNames.forEach(p => {
+      const found = personData.find(d => d.person === p && String(d.year) === year);
+      row[p] = found ? Number(found.margin) : 0;
+    });
+    return row;
+  }), [years, personNames, personData]);
+
+  // ─── Now we can have conditional returns ───────────────────────────────────
+
   useEffect(() => {
     Promise.all([
       api.historicalShipments(),
@@ -51,46 +95,6 @@ export function HistoricalShipmentAnalytics() {
   if (error) return (
     <div className="flex items-center justify-center h-96 text-red-500">Failed to load: {error}</div>
   );
-
-  // ── Derived filter options ─────────────────────────────────────────────────
-  const uniqueYears    = [...new Set(shipments.map(r => String(r.year)))].sort();
-  const uniqueProducts = [...new Set(shipments.map(r => r.product))].sort();
-  const uniqueOrigins  = [...new Set(shipments.map(r => r.origin))].sort();
-
-  // ── Filtered table data ────────────────────────────────────────────────────
-  const filtered = useMemo(() =>
-    shipments.filter(r =>
-      (selectedYear    === "all" || String(r.year) === selectedYear) &&
-      (selectedProduct === "all" || r.product === selectedProduct) &&
-      (selectedOrigin  === "all" || r.origin  === selectedOrigin)
-    ),
-    [shipments, selectedYear, selectedProduct, selectedOrigin]
-  );
-
-  const totalRevenue = filtered.reduce((s, r) => s + Number(r.revenue), 0);
-  const totalMargin  = filtered.reduce((s, r) => s + Number(r.margin),  0);
-  const totalTx      = filtered.reduce((s, r) => s + Number(r.transactions), 0);
-  const avgMarginPct = totalRevenue > 0 ? ((totalMargin / totalRevenue) * 100).toFixed(1) : "—";
-
-  // ── Chart data ─────────────────────────────────────────────────────────────
-  const revenueData   = yearlyTotals.map(y => ({ year: String(y.year), revenue: Number(y.revenue) }));
-  const costData      = yearlyTotals.map(y => ({ year: String(y.year), cost:    Number(y.expense) }));
-  const profitPctData = yearlyTotals.map(y => ({ year: String(y.year), profit:  Number(y.marginPct) }));
-
-  const revenueByProduct = products.slice(0, 8).map(p => ({ product: p.product, revenue: Number(p.revenue) }));
-  const revenueByOrigin  = origins.slice(0, 8).map(o  => ({ origin:  o.origin,  revenue: Number(o.revenue) }));
-
-  const years       = [...new Set(personData.map(p => String(p.year)))].sort();
-  const personNames = [...new Set(personData.map(p => p.person))];
-
-  const personComparisonData = years.map(year => {
-    const row: Record<string, string | number> = { year };
-    personNames.forEach(p => {
-      const found = personData.find(d => d.person === p && String(d.year) === year);
-      row[p] = found ? Number(found.margin) : 0;
-    });
-    return row;
-  });
 
   return (
     <div className="space-y-8">

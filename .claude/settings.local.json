@@ -27,7 +27,16 @@
       "Bash(echo \"winget:$?\")",
       "Bash(docker --version)",
       "Bash(echo \"docker:$?\")",
-      "Bash(winget search postgresql)"
+      "Bash(winget search postgresql)",
+      "Bash(python3 /tmp/write_analytics.py)",
+      "Bash(where python)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const d1=''C:/Users/Admin/OneDrive/Desktop/Cashflow New/backend/src/services''; const d2=''C:/Users/Admin/OneDrive/Desktop/Cashflow New/backend/src/routes''; fs.mkdirSync\\(d1,{recursive:true}\\); fs.mkdirSync\\(d2,{recursive:true}\\); console.log\\(''dirs ok''\\);\")",
+      "Bash(python -c \"import os; os.makedirs\\(''C:/Users/Admin/OneDrive/Desktop/Cashflow New/backend/src/services'', exist_ok=True\\); os.makedirs\\(''C:/Users/Admin/OneDrive/Desktop/Cashflow New/backend/src/routes'', exist_ok=True\\); print\\(''dirs ok''\\)\")",
+      "Bash(cmd /c \"python -c \"\"import sys; print\\(sys.version\\)\"\"\")",
+      "Bash(cmd /c \"python --version\")",
+      "Bash(C:/Python314/python.exe --version)",
+      "Bash(C:/Python314/python.exe -c \"print\\(''hello from python''\\)\")"
     ]
   }
 }
