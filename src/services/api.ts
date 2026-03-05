@@ -29,6 +29,11 @@ async function get<T>(path: string, params?: Record<string, string | number | un
       const msg = await res.text().catch(() => res.statusText);
       throw new Error(`API ${path} → ${res.status}: ${msg}`);
     }
+    // Check if response is actually JSON
+    const contentType = res.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      throw new Error(`API ${path} returned non-JSON response: ${contentType || 'unknown content-type'}`);
+    }
     return res.json() as Promise<T>;
   } catch (error) {
     console.warn(`API call failed for ${path}, using mock data:`, error);
