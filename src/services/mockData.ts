@@ -116,9 +116,9 @@ export const mockData = {
   }),
 
   profitability: (year?: number): ProfitabilityRow[] => [
-    { product: 'Fresh Produce', origin: 'Brazil', kgs: 5200, cost: 422500, revenue: 650000, grossMargin: 227500 },
-    { product: 'Spices', origin: 'Peru', kgs: 2000, cost: 162250, revenue: 275000, grossMargin: 112750 },
-    { product: 'Grains', origin: 'Argentina', kgs: 3000, cost: 126000, revenue: 210000, grossMargin: 84000 },
+    { product: 'Fresh Produce', origin: 'Brazil', kgs: 5200, cost: 422500, revenue: 650000, grossMargin: 35 },
+    { product: 'Spices', origin: 'Peru', kgs: 2000, cost: 162250, revenue: 275000, grossMargin: 41 },
+    { product: 'Grains', origin: 'Argentina', kgs: 3000, cost: 126000, revenue: 210000, grossMargin: 40 },
   ],
 
   risk: (year?: number): RiskData => ({
