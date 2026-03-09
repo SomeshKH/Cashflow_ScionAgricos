@@ -9,9 +9,9 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      // Forward every /api/* request to the backend running on port 8000
+      // In local dev: forward /api/* to the AWS FastAPI backend
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'http://3.27.150.43:8000',
         changeOrigin: true,
       },
     },
