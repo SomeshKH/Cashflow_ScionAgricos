@@ -2,6 +2,7 @@
  * API Service Layer
  * All HTTP calls to the backend in one place.
  * Base URL is read from VITE_API_BASE_URL env var (defaults to /api for the Vite proxy).
+ * API key is sent as X-API-Key header (read from VITE_API_KEY env var).
  * Falls back to mock data if backend is unavailable.
  */
 import type {
@@ -12,7 +13,19 @@ import type {
 } from '../types/api';
 import { mockData } from './mockData';
 
-const BASE = (import.meta as any).env?.VITE_API_BASE_URL ?? '/api';
+const BASE    = (import.meta as any).env?.VITE_API_BASE_URL ?? '/api';
+const API_KEY = (import.meta as any).env?.VITE_API_KEY ?? '';
+
+// Build request headers – always include the API key when available
+function buildHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (API_KEY) {
+    headers['X-API-Key'] = API_KEY;
+  }
+  return headers;
+}
 
 // ─── Generic fetch wrapper ────────────────────────────────────────────────────
 
@@ -24,7 +37,7 @@ async function get<T>(path: string, params?: Record<string, string | number | un
         if (v !== null && v !== undefined) url.searchParams.set(k, String(v));
       });
     }
-    const res = await fetch(url.toString());
+    const res = await fetch(url.toString(), { headers: buildHeaders() });
     if (!res.ok) {
       const msg = await res.text().catch(() => res.statusText);
       throw new Error(`API ${path} → ${res.status}: ${msg}`);
@@ -140,7 +153,7 @@ export const api = {
     try {
       const res = await fetch(`${BASE}/ingest`, {
         method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: buildHeaders(),
         body:    JSON.stringify(dir ? { dir } : {}),
       });
       return res.json();

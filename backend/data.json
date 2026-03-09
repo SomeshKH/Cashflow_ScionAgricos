@@ -1,0 +1,406 @@
+{
+  "yearlyTotals": [
+    { "year": 2023, "revenue": 2400000, "expense": 1800000, "margin": 600000,  "marginPct": 25, "transactions": 1250 },
+    { "year": 2024, "revenue": 3100000, "expense": 2170000, "margin": 930000,  "marginPct": 30, "transactions": 1540 },
+    { "year": 2025, "revenue": 3850000, "expense": 2419000, "margin": 1431000, "marginPct": 37, "transactions": 1890 }
+  ],
+
+  "summary": {
+    "2023": {
+      "totalRevenue": 2400000, "totalExpense": 1800000, "totalMargin": 600000,
+      "marginPct": 25, "transactions": 1250,
+      "revenueYoY": null, "marginYoY": null,
+      "topProduct": "Fresh Produce", "topOrigin": "Brazil"
+    },
+    "2024": {
+      "totalRevenue": 3100000, "totalExpense": 2170000, "totalMargin": 930000,
+      "marginPct": 30, "transactions": 1540,
+      "revenueYoY": 29.2, "marginYoY": 55.0,
+      "topProduct": "Fresh Produce", "topOrigin": "Brazil"
+    },
+    "2025": {
+      "totalRevenue": 3850000, "totalExpense": 2419000, "totalMargin": 1431000,
+      "marginPct": 37, "transactions": 1890,
+      "revenueYoY": 24.2, "marginYoY": 53.8,
+      "topProduct": "Fresh Produce", "topOrigin": "Brazil"
+    }
+  },
+
+  "personYearData": [
+    { "person": "Chiru",    "year": 2023, "revenue": 600000,  "margin": 150000, "transactions": 312 },
+    { "person": "Madhu",    "year": 2023, "revenue": 650000,  "margin": 162500, "transactions": 337 },
+    { "person": "Mahendra", "year": 2023, "revenue": 575000,  "margin": 143750, "transactions": 300 },
+    { "person": "Unmesh",   "year": 2023, "revenue": 575000,  "margin": 143750, "transactions": 301 },
+    { "person": "Chiru",    "year": 2024, "revenue": 775000,  "margin": 232500, "transactions": 385 },
+    { "person": "Madhu",    "year": 2024, "revenue": 800000,  "margin": 240000, "transactions": 400 },
+    { "person": "Mahendra", "year": 2024, "revenue": 712500,  "margin": 213750, "transactions": 375 },
+    { "person": "Unmesh",   "year": 2024, "revenue": 812500,  "margin": 243750, "transactions": 380 },
+    { "person": "Chiru",    "year": 2025, "revenue": 960000,  "margin": 356000, "transactions": 470 },
+    { "person": "Madhu",    "year": 2025, "revenue": 1040000, "margin": 385000, "transactions": 510 },
+    { "person": "Mahendra", "year": 2025, "revenue": 890000,  "margin": 330000, "transactions": 435 },
+    { "person": "Unmesh",   "year": 2025, "revenue": 960000,  "margin": 360000, "transactions": 475 }
+  ],
+
+  "monthlyMargins": {
+    "2023": [
+      { "month": 1,  "margin": 45000,  "revenue": 179000 },
+      { "month": 2,  "margin": 41000,  "revenue": 165000 },
+      { "month": 3,  "margin": 49000,  "revenue": 194000 },
+      { "month": 4,  "margin": 46000,  "revenue": 185000 },
+      { "month": 5,  "margin": 51000,  "revenue": 205000 },
+      { "month": 6,  "margin": 50000,  "revenue": 200000 },
+      { "month": 7,  "margin": 54000,  "revenue": 217000 },
+      { "month": 8,  "margin": 53000,  "revenue": 211000 },
+      { "month": 9,  "margin": 48000,  "revenue": 191000 },
+      { "month": 10, "margin": 54000,  "revenue": 214000 },
+      { "month": 11, "margin": 49000,  "revenue": 197000 },
+      { "month": 12, "margin": 61000,  "revenue": 243000 }
+    ],
+    "2024": [
+      { "month": 1,  "margin": 69000,  "revenue": 231000 },
+      { "month": 2,  "margin": 64000,  "revenue": 213000 },
+      { "month": 3,  "margin": 75000,  "revenue": 250000 },
+      { "month": 4,  "margin": 72000,  "revenue": 239000 },
+      { "month": 5,  "margin": 80000,  "revenue": 265000 },
+      { "month": 6,  "margin": 77000,  "revenue": 258000 },
+      { "month": 7,  "margin": 84000,  "revenue": 280000 },
+      { "month": 8,  "margin": 82000,  "revenue": 273000 },
+      { "month": 9,  "margin": 74000,  "revenue": 247000 },
+      { "month": 10, "margin": 83000,  "revenue": 276000 },
+      { "month": 11, "margin": 76000,  "revenue": 254000 },
+      { "month": 12, "margin": 94000,  "revenue": 314000 }
+    ],
+    "2025": [
+      { "month": 1,  "margin": 115000, "revenue": 310000 },
+      { "month": 2,  "margin": 102000, "revenue": 285000 },
+      { "month": 3,  "margin": 125000, "revenue": 335000 },
+      { "month": 4,  "margin": 118000, "revenue": 320000 },
+      { "month": 5,  "margin": 132000, "revenue": 355000 },
+      { "month": 6,  "margin": 128000, "revenue": 345000 },
+      { "month": 7,  "margin": 140000, "revenue": 375000 },
+      { "month": 8,  "margin": 135000, "revenue": 365000 },
+      { "month": 9,  "margin": 122000, "revenue": 330000 },
+      { "month": 10, "margin": 138000, "revenue": 370000 },
+      { "month": 11, "margin": 125000, "revenue": 340000 },
+      { "month": 12, "margin": 151000, "revenue": 420000 }
+    ]
+  },
+
+  "products": {
+    "2023": [
+      { "product": "Fresh Produce",  "revenue": 960000,  "margin": 240000, "transactions": 360, "marginPct": 25 },
+      { "product": "Spices",         "revenue": 612000,  "margin": 153000, "transactions": 220, "marginPct": 25 },
+      { "product": "Grains",         "revenue": 468000,  "margin": 117000, "transactions": 237, "marginPct": 25 },
+      { "product": "Processed Foods","revenue": 360000,  "margin": 90000,  "transactions": 278, "marginPct": 25 }
+    ],
+    "2024": [
+      { "product": "Fresh Produce",  "revenue": 1240000, "margin": 372000, "transactions": 463, "marginPct": 30 },
+      { "product": "Spices",         "revenue": 790000,  "margin": 237000, "transactions": 284, "marginPct": 30 },
+      { "product": "Grains",         "revenue": 605000,  "margin": 181500, "transactions": 306, "marginPct": 30 },
+      { "product": "Processed Foods","revenue": 465000,  "margin": 139500, "transactions": 359, "marginPct": 30 }
+    ],
+    "2025": [
+      { "product": "Fresh Produce",  "revenue": 1540000, "margin": 540000, "transactions": 620, "marginPct": 35 },
+      { "product": "Spices",         "revenue": 980000,  "margin": 380000, "transactions": 380, "marginPct": 39 },
+      { "product": "Grains",         "revenue": 750000,  "margin": 275000, "transactions": 410, "marginPct": 37 },
+      { "product": "Processed Foods","revenue": 580000,  "margin": 236000, "transactions": 480, "marginPct": 41 }
+    ]
+  },
+
+  "origins": {
+    "2023": [
+      { "origin": "Brazil",    "revenue": 750000,  "margin": 187500, "transactions": 260, "marginPct": 25 },
+      { "origin": "Argentina", "revenue": 592000,  "margin": 148000, "transactions": 243, "marginPct": 25 },
+      { "origin": "Peru",      "revenue": 548000,  "margin": 137000, "transactions": 318, "marginPct": 25 },
+      { "origin": "Colombia",  "revenue": 510000,  "margin": 127500, "transactions": 272, "marginPct": 25 }
+    ],
+    "2024": [
+      { "origin": "Brazil",    "revenue": 966000,  "margin": 289800, "transactions": 336, "marginPct": 30 },
+      { "origin": "Argentina", "revenue": 765000,  "margin": 229500, "transactions": 314, "marginPct": 30 },
+      { "origin": "Peru",      "revenue": 708000,  "margin": 212400, "transactions": 411, "marginPct": 30 },
+      { "origin": "Colombia",  "revenue": 661000,  "margin": 198300, "transactions": 351, "marginPct": 30 }
+    ],
+    "2025": [
+      { "origin": "Brazil",    "revenue": 1200000, "margin": 420000, "transactions": 450, "marginPct": 35 },
+      { "origin": "Argentina", "revenue": 950000,  "margin": 380000, "transactions": 420, "marginPct": 40 },
+      { "origin": "Peru",      "revenue": 880000,  "margin": 340000, "transactions": 550, "marginPct": 39 },
+      { "origin": "Colombia",  "revenue": 820000,  "margin": 291000, "transactions": 470, "marginPct": 35 }
+    ]
+  },
+
+  "historicalShipments": [
+    { "year": 2023, "product": "Fresh Produce",  "origin": "Brazil",    "transactions": 180, "boxes": 3600, "revenue": 450000, "margin": 112500, "marginPct": 25 },
+    { "year": 2023, "product": "Spices",         "origin": "Peru",      "transactions": 115, "boxes": 1380, "revenue": 287000, "margin": 71750,  "marginPct": 25 },
+    { "year": 2023, "product": "Grains",         "origin": "Argentina", "transactions": 88,  "boxes": 2640, "revenue": 220000, "margin": 55000,  "marginPct": 25 },
+    { "year": 2023, "product": "Processed Foods","origin": "Colombia",  "transactions": 67,  "boxes": 2010, "revenue": 168000, "margin": 42000,  "marginPct": 25 },
+    { "year": 2024, "product": "Fresh Produce",  "origin": "Brazil",    "transactions": 220, "boxes": 4400, "revenue": 580000, "margin": 174000, "marginPct": 30 },
+    { "year": 2024, "product": "Spices",         "origin": "Peru",      "transactions": 148, "boxes": 1776, "revenue": 370000, "margin": 111000, "marginPct": 30 },
+    { "year": 2024, "product": "Grains",         "origin": "Argentina", "transactions": 114, "boxes": 3420, "revenue": 284000, "margin": 85200,  "marginPct": 30 },
+    { "year": 2024, "product": "Processed Foods","origin": "Colombia",  "transactions": 87,  "boxes": 2610, "revenue": 217000, "margin": 65100,  "marginPct": 30 },
+    { "year": 2025, "product": "Fresh Produce",  "origin": "Brazil",    "transactions": 260, "boxes": 5200, "revenue": 650000, "margin": 227500, "marginPct": 35 },
+    { "year": 2025, "product": "Spices",         "origin": "Peru",      "transactions": 191, "boxes": 2292, "revenue": 478000, "margin": 186420, "marginPct": 39 },
+    { "year": 2025, "product": "Grains",         "origin": "Argentina", "transactions": 146, "boxes": 4380, "revenue": 366000, "margin": 135420, "marginPct": 37 },
+    { "year": 2025, "product": "Processed Foods","origin": "Colombia",  "transactions": 113, "boxes": 3390, "revenue": 283000, "margin": 116030, "marginPct": 41 }
+  ],
+
+  "cashFlow": {
+    "2023": {
+      "conservative": [
+        { "month": "Jan", "inflows": 193000, "outflows": 134000, "net": 59000,  "cumulative": 59000  },
+        { "month": "Feb", "inflows": 178000, "outflows": 123000, "net": 55000,  "cumulative": 114000 },
+        { "month": "Mar", "inflows": 209000, "outflows": 145000, "net": 64000,  "cumulative": 178000 },
+        { "month": "Apr", "inflows": 199000, "outflows": 134000, "net": 65000,  "cumulative": 243000 },
+        { "month": "May", "inflows": 221000, "outflows": 153000, "net": 68000,  "cumulative": 311000 },
+        { "month": "Jun", "inflows": 215000, "outflows": 145000, "net": 70000,  "cumulative": 381000 },
+        { "month": "Jul", "inflows": 234000, "outflows": 160000, "net": 74000,  "cumulative": 455000 },
+        { "month": "Aug", "inflows": 227000, "outflows": 156000, "net": 72000,  "cumulative": 527000 },
+        { "month": "Sep", "inflows": 206000, "outflows": 138000, "net": 67000,  "cumulative": 594000 },
+        { "month": "Oct", "inflows": 231000, "outflows": 159000, "net": 72000,  "cumulative": 666000 },
+        { "month": "Nov", "inflows": 212000, "outflows": 143000, "net": 68000,  "cumulative": 734000 },
+        { "month": "Dec", "inflows": 262000, "outflows": 182000, "net": 80000,  "cumulative": 814000 }
+      ],
+      "realistic": [
+        { "month": "Jan", "inflows": 193000, "outflows": 121000, "net": 72000,  "cumulative": 72000  },
+        { "month": "Feb", "inflows": 178000, "outflows": 114000, "net": 64000,  "cumulative": 136000 },
+        { "month": "Mar", "inflows": 209000, "outflows": 131000, "net": 78000,  "cumulative": 214000 },
+        { "month": "Apr", "inflows": 199000, "outflows": 126000, "net": 73000,  "cumulative": 287000 },
+        { "month": "May", "inflows": 221000, "outflows": 139000, "net": 82000,  "cumulative": 369000 },
+        { "month": "Jun", "inflows": 215000, "outflows": 135000, "net": 80000,  "cumulative": 449000 },
+        { "month": "Jul", "inflows": 234000, "outflows": 146000, "net": 88000,  "cumulative": 537000 },
+        { "month": "Aug", "inflows": 227000, "outflows": 143000, "net": 84000,  "cumulative": 621000 },
+        { "month": "Sep", "inflows": 206000, "outflows": 130000, "net": 76000,  "cumulative": 697000 },
+        { "month": "Oct", "inflows": 231000, "outflows": 145000, "net": 86000,  "cumulative": 783000 },
+        { "month": "Nov", "inflows": 212000, "outflows": 134000, "net": 78000,  "cumulative": 861000 },
+        { "month": "Dec", "inflows": 262000, "outflows": 168000, "net": 94000,  "cumulative": 955000 }
+      ],
+      "aggressive": [
+        { "month": "Jan", "inflows": 193000, "outflows": 106000, "net": 87000,  "cumulative": 87000  },
+        { "month": "Feb", "inflows": 178000, "outflows": 100000, "net": 78000,  "cumulative": 165000 },
+        { "month": "Mar", "inflows": 209000, "outflows": 115000, "net": 94000,  "cumulative": 259000 },
+        { "month": "Apr", "inflows": 199000, "outflows": 111000, "net": 88000,  "cumulative": 347000 },
+        { "month": "May", "inflows": 221000, "outflows": 123000, "net": 98000,  "cumulative": 445000 },
+        { "month": "Jun", "inflows": 215000, "outflows": 118000, "net": 97000,  "cumulative": 542000 },
+        { "month": "Jul", "inflows": 234000, "outflows": 131000, "net": 103000, "cumulative": 645000 },
+        { "month": "Aug", "inflows": 227000, "outflows": 128000, "net": 100000, "cumulative": 745000 },
+        { "month": "Sep", "inflows": 206000, "outflows": 113000, "net": 92000,  "cumulative": 837000 },
+        { "month": "Oct", "inflows": 231000, "outflows": 130000, "net": 101000, "cumulative": 938000 },
+        { "month": "Nov", "inflows": 212000, "outflows": 117000, "net": 95000,  "cumulative": 1033000 },
+        { "month": "Dec", "inflows": 262000, "outflows": 150000, "net": 112000, "cumulative": 1145000 }
+      ]
+    },
+    "2024": {
+      "conservative": [
+        { "month": "Jan", "inflows": 250000, "outflows": 173000, "net": 77000,  "cumulative": 77000  },
+        { "month": "Feb", "inflows": 229000, "outflows": 159000, "net": 71000,  "cumulative": 148000 },
+        { "month": "Mar", "inflows": 270000, "outflows": 188000, "net": 82000,  "cumulative": 230000 },
+        { "month": "Apr", "inflows": 258000, "outflows": 173000, "net": 85000,  "cumulative": 315000 },
+        { "month": "May", "inflows": 286000, "outflows": 197000, "net": 89000,  "cumulative": 404000 },
+        { "month": "Jun", "inflows": 278000, "outflows": 188000, "net": 90000,  "cumulative": 494000 },
+        { "month": "Jul", "inflows": 302000, "outflows": 207000, "net": 95000,  "cumulative": 589000 },
+        { "month": "Aug", "inflows": 294000, "outflows": 201000, "net": 93000,  "cumulative": 682000 },
+        { "month": "Sep", "inflows": 266000, "outflows": 179000, "net": 87000,  "cumulative": 769000 },
+        { "month": "Oct", "inflows": 298000, "outflows": 205000, "net": 93000,  "cumulative": 862000 },
+        { "month": "Nov", "inflows": 274000, "outflows": 185000, "net": 89000,  "cumulative": 951000 },
+        { "month": "Dec", "inflows": 338000, "outflows": 235000, "net": 103000, "cumulative": 1054000 }
+      ],
+      "realistic": [
+        { "month": "Jan", "inflows": 250000, "outflows": 157000, "net": 93000,  "cumulative": 93000  },
+        { "month": "Feb", "inflows": 229000, "outflows": 147000, "net": 82000,  "cumulative": 175000 },
+        { "month": "Mar", "inflows": 270000, "outflows": 169000, "net": 101000, "cumulative": 276000 },
+        { "month": "Apr", "inflows": 258000, "outflows": 163000, "net": 95000,  "cumulative": 371000 },
+        { "month": "May", "inflows": 286000, "outflows": 180000, "net": 106000, "cumulative": 477000 },
+        { "month": "Jun", "inflows": 278000, "outflows": 175000, "net": 103000, "cumulative": 580000 },
+        { "month": "Jul", "inflows": 302000, "outflows": 189000, "net": 113000, "cumulative": 693000 },
+        { "month": "Aug", "inflows": 294000, "outflows": 185000, "net": 109000, "cumulative": 802000 },
+        { "month": "Sep", "inflows": 266000, "outflows": 168000, "net": 98000,  "cumulative": 900000 },
+        { "month": "Oct", "inflows": 298000, "outflows": 187000, "net": 111000, "cumulative": 1011000 },
+        { "month": "Nov", "inflows": 274000, "outflows": 173000, "net": 101000, "cumulative": 1112000 },
+        { "month": "Dec", "inflows": 338000, "outflows": 217000, "net": 121000, "cumulative": 1233000 }
+      ],
+      "aggressive": [
+        { "month": "Jan", "inflows": 250000, "outflows": 137000, "net": 113000, "cumulative": 113000 },
+        { "month": "Feb", "inflows": 229000, "outflows": 129000, "net": 101000, "cumulative": 214000 },
+        { "month": "Mar", "inflows": 270000, "outflows": 149000, "net": 121000, "cumulative": 335000 },
+        { "month": "Apr", "inflows": 258000, "outflows": 143000, "net": 114000, "cumulative": 449000 },
+        { "month": "May", "inflows": 286000, "outflows": 159000, "net": 127000, "cumulative": 576000 },
+        { "month": "Jun", "inflows": 278000, "outflows": 153000, "net": 125000, "cumulative": 701000 },
+        { "month": "Jul", "inflows": 302000, "outflows": 169000, "net": 133000, "cumulative": 834000 },
+        { "month": "Aug", "inflows": 294000, "outflows": 165000, "net": 129000, "cumulative": 963000 },
+        { "month": "Sep", "inflows": 266000, "outflows": 147000, "net": 119000, "cumulative": 1082000 },
+        { "month": "Oct", "inflows": 298000, "outflows": 167000, "net": 130000, "cumulative": 1212000 },
+        { "month": "Nov", "inflows": 274000, "outflows": 151000, "net": 122000, "cumulative": 1334000 },
+        { "month": "Dec", "inflows": 338000, "outflows": 193000, "net": 145000, "cumulative": 1479000 }
+      ]
+    },
+    "2025": {
+      "conservative": [
+        { "month": "Jan", "inflows": 310000, "outflows": 215000, "net": 95000,  "cumulative": 95000  },
+        { "month": "Feb", "inflows": 285000, "outflows": 197000, "net": 88000,  "cumulative": 183000 },
+        { "month": "Mar", "inflows": 335000, "outflows": 233000, "net": 102000, "cumulative": 285000 },
+        { "month": "Apr", "inflows": 320000, "outflows": 215000, "net": 105000, "cumulative": 390000 },
+        { "month": "May", "inflows": 355000, "outflows": 245000, "net": 110000, "cumulative": 500000 },
+        { "month": "Jun", "inflows": 345000, "outflows": 233000, "net": 112000, "cumulative": 612000 },
+        { "month": "Jul", "inflows": 375000, "outflows": 257000, "net": 118000, "cumulative": 730000 },
+        { "month": "Aug", "inflows": 365000, "outflows": 250000, "net": 115000, "cumulative": 845000 },
+        { "month": "Sep", "inflows": 330000, "outflows": 222000, "net": 108000, "cumulative": 953000 },
+        { "month": "Oct", "inflows": 370000, "outflows": 255000, "net": 115000, "cumulative": 1068000 },
+        { "month": "Nov", "inflows": 340000, "outflows": 230000, "net": 110000, "cumulative": 1178000 },
+        { "month": "Dec", "inflows": 420000, "outflows": 292000, "net": 128000, "cumulative": 1306000 }
+      ],
+      "realistic": [
+        { "month": "Jan", "inflows": 310000, "outflows": 195000, "net": 115000, "cumulative": 115000 },
+        { "month": "Feb", "inflows": 285000, "outflows": 183000, "net": 102000, "cumulative": 217000 },
+        { "month": "Mar", "inflows": 335000, "outflows": 210000, "net": 125000, "cumulative": 342000 },
+        { "month": "Apr", "inflows": 320000, "outflows": 202000, "net": 118000, "cumulative": 460000 },
+        { "month": "May", "inflows": 355000, "outflows": 223000, "net": 132000, "cumulative": 592000 },
+        { "month": "Jun", "inflows": 345000, "outflows": 217000, "net": 128000, "cumulative": 720000 },
+        { "month": "Jul", "inflows": 375000, "outflows": 235000, "net": 140000, "cumulative": 860000 },
+        { "month": "Aug", "inflows": 365000, "outflows": 230000, "net": 135000, "cumulative": 995000 },
+        { "month": "Sep", "inflows": 330000, "outflows": 208000, "net": 122000, "cumulative": 1117000 },
+        { "month": "Oct", "inflows": 370000, "outflows": 232000, "net": 138000, "cumulative": 1255000 },
+        { "month": "Nov", "inflows": 340000, "outflows": 215000, "net": 125000, "cumulative": 1380000 },
+        { "month": "Dec", "inflows": 420000, "outflows": 269000, "net": 151000, "cumulative": 1531000 }
+      ],
+      "aggressive": [
+        { "month": "Jan", "inflows": 310000, "outflows": 170000, "net": 140000, "cumulative": 140000 },
+        { "month": "Feb", "inflows": 285000, "outflows": 160000, "net": 125000, "cumulative": 265000 },
+        { "month": "Mar", "inflows": 335000, "outflows": 185000, "net": 150000, "cumulative": 415000 },
+        { "month": "Apr", "inflows": 320000, "outflows": 178000, "net": 142000, "cumulative": 557000 },
+        { "month": "May", "inflows": 355000, "outflows": 197000, "net": 158000, "cumulative": 715000 },
+        { "month": "Jun", "inflows": 345000, "outflows": 190000, "net": 155000, "cumulative": 870000 },
+        { "month": "Jul", "inflows": 375000, "outflows": 210000, "net": 165000, "cumulative": 1035000 },
+        { "month": "Aug", "inflows": 365000, "outflows": 205000, "net": 160000, "cumulative": 1195000 },
+        { "month": "Sep", "inflows": 330000, "outflows": 182000, "net": 148000, "cumulative": 1343000 },
+        { "month": "Oct", "inflows": 370000, "outflows": 208000, "net": 162000, "cumulative": 1505000 },
+        { "month": "Nov", "inflows": 340000, "outflows": 188000, "net": 152000, "cumulative": 1657000 },
+        { "month": "Dec", "inflows": 420000, "outflows": 240000, "net": 180000, "cumulative": 1837000 }
+      ]
+    }
+  },
+
+  "profitability": {
+    "2023": [
+      { "product": "Fresh Produce", "origin": "Brazil",    "kgs": 3600, "cost": 337500, "revenue": 450000, "grossMargin": 112500 },
+      { "product": "Spices",        "origin": "Peru",      "kgs": 1380, "cost": 215250, "revenue": 287000, "grossMargin": 71750  },
+      { "product": "Grains",        "origin": "Argentina", "kgs": 2640, "cost": 165000, "revenue": 220000, "grossMargin": 55000  }
+    ],
+    "2024": [
+      { "product": "Fresh Produce", "origin": "Brazil",    "kgs": 4400, "cost": 406000, "revenue": 580000, "grossMargin": 174000 },
+      { "product": "Spices",        "origin": "Peru",      "kgs": 1776, "cost": 259000, "revenue": 370000, "grossMargin": 111000 },
+      { "product": "Grains",        "origin": "Argentina", "kgs": 3420, "cost": 198800, "revenue": 284000, "grossMargin": 85200  }
+    ],
+    "2025": [
+      { "product": "Fresh Produce", "origin": "Brazil",    "kgs": 5200, "cost": 422500, "revenue": 650000, "grossMargin": 227500 },
+      { "product": "Spices",        "origin": "Peru",      "kgs": 2000, "cost": 162250, "revenue": 275000, "grossMargin": 112750 },
+      { "product": "Grains",        "origin": "Argentina", "kgs": 3000, "cost": 126000, "revenue": 210000, "grossMargin": 84000  }
+    ]
+  },
+
+  "risk": {
+    "2023": {
+      "lowMarginProducts": [
+        { "product": "Processed Foods", "origin": "Colombia", "margin": 90000,  "transactions": 278 }
+      ],
+      "highVolatilityProducts": [
+        { "product": "Fresh Produce", "volatility": 0.42, "avg_margin": 240000, "active_months": 12 },
+        { "product": "Spices",        "volatility": 0.38, "avg_margin": 153000, "active_months": 12 }
+      ],
+      "currencyExposure": [
+        { "currency": "BRL", "exposure": 750000  },
+        { "currency": "ARS", "exposure": 592000  },
+        { "currency": "PEN", "exposure": 548000  }
+      ]
+    },
+    "2024": {
+      "lowMarginProducts": [
+        { "product": "Processed Foods", "origin": "Colombia", "margin": 139500, "transactions": 359 }
+      ],
+      "highVolatilityProducts": [
+        { "product": "Fresh Produce", "volatility": 0.42, "avg_margin": 372000, "active_months": 12 },
+        { "product": "Spices",        "volatility": 0.38, "avg_margin": 237000, "active_months": 12 }
+      ],
+      "currencyExposure": [
+        { "currency": "BRL", "exposure": 966000  },
+        { "currency": "ARS", "exposure": 765000  },
+        { "currency": "PEN", "exposure": 708000  }
+      ]
+    },
+    "2025": {
+      "lowMarginProducts": [
+        { "product": "Processed Foods", "origin": "Colombia", "margin": 236000, "transactions": 480 }
+      ],
+      "highVolatilityProducts": [
+        { "product": "Fresh Produce", "volatility": 0.42, "avg_margin": 540000, "active_months": 12 },
+        { "product": "Spices",        "volatility": 0.38, "avg_margin": 380000, "active_months": 12 }
+      ],
+      "currencyExposure": [
+        { "currency": "BRL", "exposure": 1200000 },
+        { "currency": "ARS", "exposure": 950000  },
+        { "currency": "PEN", "exposure": 880000  }
+      ]
+    }
+  },
+
+  "seasonal": [
+    { "month": 1,  "avg_revenue": 310000, "avg_margin": 115000, "avg_margin_pct": 37, "total_boxes": 4700, "transaction_count": 470 },
+    { "month": 2,  "avg_revenue": 285000, "avg_margin": 102000, "avg_margin_pct": 36, "total_boxes": 4200, "transaction_count": 420 },
+    { "month": 3,  "avg_revenue": 335000, "avg_margin": 125000, "avg_margin_pct": 37, "total_boxes": 5100, "transaction_count": 510 },
+    { "month": 4,  "avg_revenue": 320000, "avg_margin": 118000, "avg_margin_pct": 37, "total_boxes": 4850, "transaction_count": 485 },
+    { "month": 5,  "avg_revenue": 355000, "avg_margin": 132000, "avg_margin_pct": 37, "total_boxes": 5400, "transaction_count": 540 },
+    { "month": 6,  "avg_revenue": 345000, "avg_margin": 128000, "avg_margin_pct": 37, "total_boxes": 5250, "transaction_count": 525 },
+    { "month": 7,  "avg_revenue": 375000, "avg_margin": 140000, "avg_margin_pct": 37, "total_boxes": 5750, "transaction_count": 575 },
+    { "month": 8,  "avg_revenue": 365000, "avg_margin": 135000, "avg_margin_pct": 37, "total_boxes": 5600, "transaction_count": 560 },
+    { "month": 9,  "avg_revenue": 330000, "avg_margin": 122000, "avg_margin_pct": 37, "total_boxes": 5050, "transaction_count": 505 },
+    { "month": 10, "avg_revenue": 370000, "avg_margin": 138000, "avg_margin_pct": 37, "total_boxes": 5700, "transaction_count": 570 },
+    { "month": 11, "avg_revenue": 340000, "avg_margin": 125000, "avg_margin_pct": 37, "total_boxes": 5200, "transaction_count": 520 },
+    { "month": 12, "avg_revenue": 420000, "avg_margin": 151000, "avg_margin_pct": 36, "total_boxes": 6400, "transaction_count": 640 }
+  ],
+
+  "forecast": {
+    "revenueData": [
+      { "year": "2023", "actual": 2400000, "forecast": null    },
+      { "year": "2024", "actual": 3100000, "forecast": null    },
+      { "year": "2025", "actual": 3850000, "forecast": null    },
+      { "year": "2026", "actual": null,    "forecast": 4700000 }
+    ],
+    "expenseData": [
+      { "year": "2023", "actual": 1800000, "forecast": null    },
+      { "year": "2024", "actual": 2170000, "forecast": null    },
+      { "year": "2025", "actual": 2419000, "forecast": null    },
+      { "year": "2026", "actual": null,    "forecast": 2820000 }
+    ],
+    "ebitdaData": [
+      { "year": "2023", "value": 600000  },
+      { "year": "2024", "value": 930000  },
+      { "year": "2025", "value": 1431000 },
+      { "year": "2026", "value": 1880000 }
+    ],
+    "profitData": [
+      { "year": "2023", "value": 480000  },
+      { "year": "2024", "value": 744000  },
+      { "year": "2025", "value": 1144800 },
+      { "year": "2026", "value": 1504000 }
+    ]
+  },
+
+  "transactions": [
+    { "id": 1,  "trader": "Chiru",    "year": 2023, "month": 3,  "transaction_type": "Sale", "origin": "Brazil",    "customer": "EuroFresh GmbH",      "customer_country": "Germany",     "product": "Fresh Produce",  "num_boxes": 500, "weight_kg": 5000, "revenue_eur": 45000, "margin": 11250,  "sales_invoice_date": "2023-03-01", "sales_invoice_number": "INV-2023-001", "source_file": "data2023.xlsx" },
+    { "id": 2,  "trader": "Madhu",    "year": 2023, "month": 4,  "transaction_type": "Sale", "origin": "Peru",      "customer": "Épices du Monde",     "customer_country": "France",      "product": "Spices",         "num_boxes": 200, "weight_kg": 2000, "revenue_eur": 28000, "margin": 7000,   "sales_invoice_date": "2023-04-02", "sales_invoice_number": "INV-2023-002", "source_file": "data2023.xlsx" },
+    { "id": 3,  "trader": "Mahendra", "year": 2023, "month": 6,  "transaction_type": "Sale", "origin": "Argentina", "customer": "Cereal España S.L.",  "customer_country": "Spain",       "product": "Grains",         "num_boxes": 300, "weight_kg": 3000, "revenue_eur": 21000, "margin": 5250,   "sales_invoice_date": "2023-06-03", "sales_invoice_number": "INV-2023-003", "source_file": "data2023.xlsx" },
+    { "id": 4,  "trader": "Unmesh",   "year": 2023, "month": 9,  "transaction_type": "Sale", "origin": "Colombia",  "customer": "Alimentari Roma",     "customer_country": "Italy",       "product": "Processed Foods", "num_boxes": 400, "weight_kg": 4000, "revenue_eur": 32000, "margin": 8000,   "sales_invoice_date": "2023-09-04", "sales_invoice_number": "INV-2023-004", "source_file": "data2023.xlsx" },
+    { "id": 5,  "trader": "Chiru",    "year": 2023, "month": 11, "transaction_type": "Sale", "origin": "Brazil",    "customer": "Versmarkt NV",        "customer_country": "Netherlands", "product": "Fresh Produce",  "num_boxes": 450, "weight_kg": 4500, "revenue_eur": 40500, "margin": 10125,  "sales_invoice_date": "2023-11-05", "sales_invoice_number": "INV-2023-005", "source_file": "data2023.xlsx" },
+    { "id": 6,  "trader": "Chiru",    "year": 2024, "month": 2,  "transaction_type": "Sale", "origin": "Brazil",    "customer": "EuroFresh GmbH",      "customer_country": "Germany",     "product": "Fresh Produce",  "num_boxes": 580, "weight_kg": 5800, "revenue_eur": 54000, "margin": 16200,  "sales_invoice_date": "2024-02-01", "sales_invoice_number": "INV-2024-001", "source_file": "data2024.xlsx" },
+    { "id": 7,  "trader": "Madhu",    "year": 2024, "month": 5,  "transaction_type": "Sale", "origin": "Peru",      "customer": "Épices du Monde",     "customer_country": "France",      "product": "Spices",         "num_boxes": 240, "weight_kg": 2400, "revenue_eur": 33000, "margin": 9900,   "sales_invoice_date": "2024-05-02", "sales_invoice_number": "INV-2024-002", "source_file": "data2024.xlsx" },
+    { "id": 8,  "trader": "Mahendra", "year": 2024, "month": 7,  "transaction_type": "Sale", "origin": "Argentina", "customer": "Cereal España S.L.",  "customer_country": "Spain",       "product": "Grains",         "num_boxes": 340, "weight_kg": 3400, "revenue_eur": 25000, "margin": 7500,   "sales_invoice_date": "2024-07-03", "sales_invoice_number": "INV-2024-003", "source_file": "data2024.xlsx" },
+    { "id": 9,  "trader": "Unmesh",   "year": 2024, "month": 10, "transaction_type": "Sale", "origin": "Colombia",  "customer": "Alimentari Roma",     "customer_country": "Italy",       "product": "Processed Foods", "num_boxes": 460, "weight_kg": 4600, "revenue_eur": 38000, "margin": 11400,  "sales_invoice_date": "2024-10-04", "sales_invoice_number": "INV-2024-004", "source_file": "data2024.xlsx" },
+    { "id": 10, "trader": "Madhu",    "year": 2024, "month": 12, "transaction_type": "Sale", "origin": "Brazil",    "customer": "BioMarkt Belgium",    "customer_country": "Belgium",     "product": "Fresh Produce",  "num_boxes": 520, "weight_kg": 5200, "revenue_eur": 48000, "margin": 14400,  "sales_invoice_date": "2024-12-05", "sales_invoice_number": "INV-2024-005", "source_file": "data2024.xlsx" },
+    { "id": 11, "trader": "Chiru",    "year": 2025, "month": 3,  "transaction_type": "Sale", "origin": "Brazil",    "customer": "EuroFresh GmbH",      "customer_country": "Germany",     "product": "Fresh Produce",  "num_boxes": 500, "weight_kg": 5000, "revenue_eur": 45000, "margin": 13500,  "sales_invoice_date": "2025-03-01", "sales_invoice_number": "INV-2025-001", "source_file": "data2025.xlsx" },
+    { "id": 12, "trader": "Madhu",    "year": 2025, "month": 3,  "transaction_type": "Sale", "origin": "Peru",      "customer": "Épices du Monde",     "customer_country": "France",      "product": "Spices",         "num_boxes": 200, "weight_kg": 2000, "revenue_eur": 28000, "margin": 12320,  "sales_invoice_date": "2025-03-02", "sales_invoice_number": "INV-2025-002", "source_file": "data2025.xlsx" },
+    { "id": 13, "trader": "Mahendra", "year": 2025, "month": 3,  "transaction_type": "Sale", "origin": "Argentina", "customer": "Cereal España S.L.",  "customer_country": "Spain",       "product": "Grains",         "num_boxes": 300, "weight_kg": 3000, "revenue_eur": 21000, "margin": 8400,   "sales_invoice_date": "2025-03-03", "sales_invoice_number": "INV-2025-003", "source_file": "data2025.xlsx" },
+    { "id": 14, "trader": "Unmesh",   "year": 2025, "month": 6,  "transaction_type": "Sale", "origin": "Colombia",  "customer": "Alimentari Roma",     "customer_country": "Italy",       "product": "Processed Foods", "num_boxes": 420, "weight_kg": 4200, "revenue_eur": 34000, "margin": 13940,  "sales_invoice_date": "2025-06-04", "sales_invoice_number": "INV-2025-004", "source_file": "data2025.xlsx" },
+    { "id": 15, "trader": "Chiru",    "year": 2025, "month": 9,  "transaction_type": "Sale", "origin": "Brazil",    "customer": "Wien Import GmbH",    "customer_country": "Austria",     "product": "Fresh Produce",  "num_boxes": 560, "weight_kg": 5600, "revenue_eur": 51000, "margin": 17850,  "sales_invoice_date": "2025-09-05", "sales_invoice_number": "INV-2025-005", "source_file": "data2025.xlsx" },
+    { "id": 16, "trader": "Madhu",    "year": 2025, "month": 11, "transaction_type": "Sale", "origin": "Peru",      "customer": "Sabores de Lisboa",   "customer_country": "Portugal",    "product": "Spices",         "num_boxes": 180, "weight_kg": 1800, "revenue_eur": 26000, "margin": 10140,  "sales_invoice_date": "2025-11-06", "sales_invoice_number": "INV-2025-006", "source_file": "data2025.xlsx" },
+    { "id": 17, "trader": "Mahendra", "year": 2025, "month": 8,  "transaction_type": "Sale", "origin": "Argentina", "customer": "Swiss Grains AG",     "customer_country": "Switzerland", "product": "Grains",         "num_boxes": 320, "weight_kg": 3200, "revenue_eur": 22000, "margin": 8140,   "sales_invoice_date": "2025-08-07", "sales_invoice_number": "INV-2025-007", "source_file": "data2025.xlsx" },
+    { "id": 18, "trader": "Unmesh",   "year": 2025, "month": 12, "transaction_type": "Sale", "origin": "Colombia",  "customer": "Nordic Foods ApS",    "customer_country": "Denmark",     "product": "Processed Foods", "num_boxes": 400, "weight_kg": 4000, "revenue_eur": 32000, "margin": 13120,  "sales_invoice_date": "2025-12-08", "sales_invoice_number": "INV-2025-008", "source_file": "data2025.xlsx" }
+  ]
+}
