@@ -5,21 +5,23 @@ export function TopBar() {
     <header className="h-16 bg-white border-b border-[#e0e0e0] flex items-center justify-between px-8">
       <div className="flex items-center gap-4">
         <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white text-sm">
+          <option>2025</option>
           <option>2024</option>
           <option>2023</option>
-          <option>2022</option>
         </select>
         <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white text-sm">
           <option>All Products</option>
-          <option>Green Coffee</option>
-          <option>Cocoa</option>
-          <option>Cashew</option>
+          <option>Fresh Produce</option>
+          <option>Spices</option>
+          <option>Grains</option>
+          <option>Processed Foods</option>
         </select>
         <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white text-sm">
           <option>All Origins</option>
-          <option>Uganda</option>
-          <option>Kenya</option>
-          <option>Tanzania</option>
+          <option>Brazil</option>
+          <option>Argentina</option>
+          <option>Peru</option>
+          <option>Colombia</option>
         </select>
         <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white text-sm">
           <option>Last 12 Months</option>

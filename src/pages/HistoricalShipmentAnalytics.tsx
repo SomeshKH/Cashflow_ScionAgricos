@@ -31,15 +31,14 @@ export function HistoricalShipmentAnalytics() {
   const uniqueOrigins  = useMemo(() => [...new Set(shipments.map(r => r.origin))].sort(), [shipments]);
 
   // Filtered table data
-  // Filtered table data
-const filtered = useMemo(() =>
-  shipments.filter(r =>
-    (selectedYear === "all" || String(r.year) === selectedYear) &&
-    (selectedProduct === "all" || r.product === selectedProduct) &&
-    (selectedOrigin === "all" || r.origin === selectedOrigin)
-  ),
-  [shipments, selectedYear, selectedProduct, selectedOrigin]
-);
+  const filtered = useMemo(() =>
+    shipments.filter(r =>
+      (selectedYear    === "all" || String(r.year) === selectedYear) &&
+      (selectedProduct === "all" || r.product === selectedProduct) &&
+      (selectedOrigin  === "all" || r.origin  === selectedOrigin)
+    ),
+    [shipments, selectedYear, selectedProduct, selectedOrigin]
+  );
 
   const totalRevenue = useMemo(() => filtered.reduce((s, r) => s + Number(r.revenue), 0), [filtered]);
   const totalMargin  = useMemo(() => filtered.reduce((s, r) => s + Number(r.margin),  0), [filtered]);
