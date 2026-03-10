@@ -80,11 +80,15 @@ export function ExecutiveDashboard() {
         // Normalize: safely unwrap arrays regardless of envelope shape
         setYearlyTotals(toArray<YearlyTotal>(yt));
         setPersonData(toArray<PersonYearData>(pyd));
-        // Explicit guard: handles [], { data:[] }, { monthly:[] }, or null
+        // Explicit guard: each branch uses Array.isArray — never stores a non-array
         setMonthly(
           Array.isArray(mm)
             ? mm
-            : (mm as any)?.data || (mm as any)?.monthly || []
+            : Array.isArray((mm as any)?.monthly)
+            ? (mm as any).monthly
+            : Array.isArray((mm as any)?.data)
+            ? (mm as any).data
+            : []
         );
         setProducts(toArray<ProductData>(pr));
         setOrigins(toArray<OriginData>(or_));
@@ -109,18 +113,16 @@ export function ExecutiveDashboard() {
   // ── Derived chart data ────────────────────────────────────────────────────
 
   // Monthly cash flow preview for selected year
-  // Guard: handles array | { monthly:[] } | { data:[] } | null/undefined
-  console.log("monthly =", monthly);
-  const monthlyData: MonthlyMargin[] = Array.isArray(monthly)
-    ? monthly
-    : Array.isArray((monthly as any)?.monthly)
-    ? (monthly as any).monthly
-    : Array.isArray((monthly as any)?.data)
-    ? (monthly as any).data
-    : [];
-  console.log("monthlyData =", monthlyData);
+  // safeMonthly: handles array | { monthly:[] } | { data:[] } | null → always []
+  console.log("monthly raw =", monthly);
+  const safeMonthly: MonthlyMargin[] =
+    Array.isArray(monthly)                       ? monthly :
+    Array.isArray((monthly as any)?.monthly)     ? (monthly as any).monthly :
+    Array.isArray((monthly as any)?.data)        ? (monthly as any).data :
+    [];
+  console.log("safeMonthly =", safeMonthly);
 
-  const cashFlowPreview = monthlyData.map((m, i) => ({
+  const cashFlowPreview = safeMonthly.map((m, i) => ({
     month: MONTHS_ABBR[i],
     cashFlow: m.margin,
   }));
