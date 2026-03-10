@@ -51,7 +51,7 @@ export function ExecutiveDashboard() {
   const [kpi,         setKpi]         = useState<KpiSummary | null>(null);
   const [yearlyTotals,setYearlyTotals]= useState<YearlyTotal[]>([]);
   const [personData,  setPersonData]  = useState<PersonYearData[]>([]);
-  const [monthly,     setMonthly]     = useState<MonthlyMargin[]>([]);
+  const [monthly,     setMonthly]     = useState<MonthlyMargin[]>([]); // always an array
   const [products,    setProducts]    = useState<ProductData[]>([]);
   const [origins,     setOrigins]     = useState<OriginData[]>([]);
   const [loading,     setLoading]     = useState(true);
@@ -80,7 +80,12 @@ export function ExecutiveDashboard() {
         // Normalize: safely unwrap arrays regardless of envelope shape
         setYearlyTotals(toArray<YearlyTotal>(yt));
         setPersonData(toArray<PersonYearData>(pyd));
-        setMonthly(toArray<MonthlyMargin>(mm));
+        // Explicit guard: handles [], { data:[] }, { monthly:[] }, or null
+        setMonthly(
+          Array.isArray(mm)
+            ? mm
+            : (mm as any)?.data || (mm as any)?.monthly || []
+        );
         setProducts(toArray<ProductData>(pr));
         setOrigins(toArray<OriginData>(or_));
       })
@@ -104,8 +109,8 @@ export function ExecutiveDashboard() {
   // ── Derived chart data ────────────────────────────────────────────────────
 
   // Monthly cash flow preview for selected year
-  // Guard: API may return an array, { monthly: [] }, { data: [] }, or nothing
-  console.log("monthly API response:", monthly);
+  // Guard: handles array | { monthly:[] } | { data:[] } | null/undefined
+  console.log("monthly =", monthly);
   const monthlyData: MonthlyMargin[] = Array.isArray(monthly)
     ? monthly
     : Array.isArray((monthly as any)?.monthly)
@@ -113,6 +118,7 @@ export function ExecutiveDashboard() {
     : Array.isArray((monthly as any)?.data)
     ? (monthly as any).data
     : [];
+  console.log("monthlyData =", monthlyData);
 
   const cashFlowPreview = monthlyData.map((m, i) => ({
     month: MONTHS_ABBR[i],
