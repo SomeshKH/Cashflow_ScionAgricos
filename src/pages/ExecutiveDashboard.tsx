@@ -10,6 +10,26 @@ import type { YearlyTotal, PersonYearData, MonthlyMargin, ProductData, OriginDat
 
 const MONTHS_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
+// ─── Safe array normalizer ────────────────────────────────────────────────────
+// The FastAPI backend may return arrays wrapped in an envelope object, e.g.:
+//   { monthly: [...] }  |  { data: [...] }  |  { items: [...] }  |  [...]
+// This helper unwraps any of those shapes and always returns a plain array.
+function toArray<T>(
+  raw: unknown,
+  keys = ['monthly', 'data', 'items', 'results', 'records'],
+): T[] {
+  if (raw == null) return [];
+  if (Array.isArray(raw)) return raw as T[];
+  if (typeof raw === 'object') {
+    for (const key of keys) {
+      const val = (raw as Record<string, unknown>)[key];
+      if (Array.isArray(val)) return val as T[];
+    }
+  }
+  console.warn('[toArray] unexpected response shape — could not extract array:', raw);
+  return [];
+}
+
 const PERSON_COLORS: Record<string, string> = {
   Chiru: "#0d5c3d",
   Madhu: "#10b981",
@@ -48,12 +68,21 @@ export function ExecutiveDashboard() {
       api.origins(year),
     ])
       .then(([k, yt, pyd, mm, pr, or_]) => {
+        // 🔍 Temporary: inspect raw API response shapes in DevTools console
+        console.log('[API raw] /dashboard/kpi         →', k);
+        console.log('[API raw] /kpi/full               →', yt);
+        console.log('[API raw] /dashboard/trader-performance →', pyd);
+        console.log('[API raw] /dashboard/revenue-trend →', mm);
+        console.log('[API raw] /analytics/products     →', pr);
+        console.log('[API raw] /analytics/origins      →', or_);
+
         setKpi(k);
-        setYearlyTotals(yt);
-        setPersonData(pyd);
-        setMonthly(mm);
-        setProducts(pr);
-        setOrigins(or_);
+        // Normalize: safely unwrap arrays regardless of envelope shape
+        setYearlyTotals(toArray<YearlyTotal>(yt));
+        setPersonData(toArray<PersonYearData>(pyd));
+        setMonthly(toArray<MonthlyMargin>(mm));
+        setProducts(toArray<ProductData>(pr));
+        setOrigins(toArray<OriginData>(or_));
       })
       .catch(e => setError(e.message))
       .finally(() => setLoading(false));
@@ -75,7 +104,17 @@ export function ExecutiveDashboard() {
   // ── Derived chart data ────────────────────────────────────────────────────
 
   // Monthly cash flow preview for selected year
-  const cashFlowPreview = monthly.map((m, i) => ({
+  // Guard: API may return an array, { monthly: [] }, { data: [] }, or nothing
+  console.log("monthly API response:", monthly);
+  const monthlyData: MonthlyMargin[] = Array.isArray(monthly)
+    ? monthly
+    : Array.isArray((monthly as any)?.monthly)
+    ? (monthly as any).monthly
+    : Array.isArray((monthly as any)?.data)
+    ? (monthly as any).data
+    : [];
+
+  const cashFlowPreview = monthlyData.map((m, i) => ({
     month: MONTHS_ABBR[i],
     cashFlow: m.margin,
   }));
