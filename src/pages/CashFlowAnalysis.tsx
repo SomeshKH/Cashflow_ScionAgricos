@@ -7,6 +7,26 @@ import {
 import { api } from "../services/api";
 import type { CashFlowScenarios, CashFlowMonth, YearlyTotal, MonthlyMargin } from "../types/api";
 
+// Normalize a raw cashflow month object — handles snake_case and missing fields
+function normalizeCfMonth(raw: any): CashFlowMonth {
+  return {
+    month:      raw.month      ?? '',
+    inflows:    Number(raw.inflows    ?? raw.cash_in    ?? raw.inflow   ?? 0),
+    outflows:   Number(raw.outflows   ?? raw.cash_out   ?? raw.outflow  ?? 0),
+    net:        Number(raw.net        ?? raw.net_cash   ?? raw.net_flow ?? 0),
+    cumulative: Number(raw.cumulative ?? raw.balance    ?? raw.running_balance ?? 0),
+  };
+}
+
+function normalizeCfScenarios(raw: any): CashFlowScenarios {
+  const norm = (arr: any) => Array.isArray(arr) ? arr.map(normalizeCfMonth) : [];
+  return {
+    conservative: norm(raw?.conservative ?? []),
+    realistic:    norm(raw?.realistic    ?? []),
+    aggressive:   norm(raw?.aggressive   ?? []),
+  };
+}
+
 const MONTHS_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 export function CashFlowAnalysis() {
@@ -29,7 +49,7 @@ export function CashFlowAnalysis() {
       api.monthlyMargins(2025),
     ])
       .then(([cf, yt, m23, m24, m25]) => {
-        setCfData(cf);
+        setCfData(normalizeCfScenarios(cf));
         setYearlyTotals(yt);
         setAllMonthly({ 2023: m23, 2024: m24, 2025: m25 });
       })
@@ -160,7 +180,7 @@ export function CashFlowAnalysis() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
                   <XAxis dataKey="month" stroke="#6b6b6b" />
                   <YAxis stroke="#6b6b6b" tickFormatter={v => `€${(v / 1_000).toFixed(0)}K`} />
-                  <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+                  <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
                   <Legend />
                   <Line type="monotone" dataKey="inflows"  stroke="#10b981" strokeWidth={3} name="Inflows" />
                   <Line type="monotone" dataKey="outflows" stroke="#ef4444" strokeWidth={3} name="Outflows" />
@@ -175,7 +195,7 @@ export function CashFlowAnalysis() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
                   <XAxis dataKey="month" stroke="#6b6b6b" />
                   <YAxis stroke="#6b6b6b" tickFormatter={v => `€${(v / 1_000).toFixed(0)}K`} />
-                  <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+                  <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
                   <Legend />
                   <Area type="monotone" dataKey="cumulative" stroke="#0d5c3d" fill="#e8f5f0" name="Cumulative Balance" />
                 </AreaChart>
@@ -226,13 +246,13 @@ export function CashFlowAnalysis() {
                   {data.map((row, i) => (
                     <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
                       <td className="py-4 px-4 text-sm font-medium">{row.month}</td>
-                      <td className="py-4 px-4 text-sm text-right text-[#10b981]">€{row.inflows.toLocaleString()}</td>
-                      <td className="py-4 px-4 text-sm text-right text-[#ef4444]">€{row.outflows.toLocaleString()}</td>
-                      <td className={`py-4 px-4 text-sm text-right font-semibold ${row.net >= 0 ? "text-[#10b981]" : "text-[#ef4444]"}`}>
-                        €{row.net.toLocaleString()}
+                      <td className="py-4 px-4 text-sm text-right text-[#10b981]">€{(row.inflows ?? 0).toLocaleString()}</td>
+                      <td className="py-4 px-4 text-sm text-right text-[#ef4444]">€{(row.outflows ?? 0).toLocaleString()}</td>
+                      <td className={`py-4 px-4 text-sm text-right font-semibold ${(row.net ?? 0) >= 0 ? "text-[#10b981]" : "text-[#ef4444]"}`}>
+                        €{(row.net ?? 0).toLocaleString()}
                       </td>
                       <td className="py-4 px-4 text-sm text-right font-semibold text-[#0d5c3d]">
-                        €{row.cumulative.toLocaleString()}
+                        €{(row.cumulative ?? 0).toLocaleString()}
                       </td>
                     </tr>
                   ))}
