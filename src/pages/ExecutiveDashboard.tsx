@@ -37,12 +37,27 @@ const PERSON_COLORS: Record<string, string> = {
   Unmesh: "#6ee7b7",
 };
 
-const fmt = (n: number) =>
-  n >= 1_000_000
-    ? `€${(n / 1_000_000).toFixed(2)}M`
-    : n >= 1_000
-    ? `€${(n / 1_000).toFixed(0)}K`
-    : `€${n.toLocaleString()}`;
+const fmt = (n: number | null | undefined): string => {
+  if (n == null || isNaN(n as number)) return '—';
+  if (n >= 1_000_000) return `€${(n / 1_000_000).toFixed(2)}M`;
+  if (n >= 1_000)     return `€${(n / 1_000).toFixed(0)}K`;
+  return `€${n.toLocaleString()}`;
+};
+
+// Normalize KPI response: handle both camelCase (JS) and snake_case (Python/FastAPI)
+function normalizeKpi(raw: any): KpiSummary {
+  return {
+    totalRevenue: raw.totalRevenue  ?? raw.total_revenue  ?? 0,
+    totalExpense: raw.totalExpense  ?? raw.total_expense  ?? 0,
+    totalMargin:  raw.totalMargin   ?? raw.total_margin   ?? 0,
+    marginPct:    raw.marginPct     ?? raw.margin_pct     ?? 0,
+    transactions: raw.transactions  ?? raw.transaction_count ?? raw.num_transactions ?? 0,
+    revenueYoY:   raw.revenueYoY   ?? raw.revenue_yoy   ?? null,
+    marginYoY:    raw.marginYoY    ?? raw.margin_yoy    ?? null,
+    topProduct:   raw.topProduct   ?? raw.top_product   ?? '—',
+    topOrigin:    raw.topOrigin    ?? raw.top_origin    ?? '—',
+  };
+}
 
 const pct = (n: number | null | undefined, pos?: boolean) =>
   n == null ? "—" : `${n > 0 ? "+" : ""}${n}%`;
@@ -76,7 +91,7 @@ export function ExecutiveDashboard() {
         console.log('[API raw] /analytics/products     →', pr);
         console.log('[API raw] /analytics/origins      →', or_);
 
-        setKpi(k);
+        setKpi(normalizeKpi(k));
         // Normalize: safely unwrap arrays regardless of envelope shape
         setYearlyTotals(toArray<YearlyTotal>(yt));
         setPersonData(toArray<PersonYearData>(pyd));
@@ -187,7 +202,7 @@ export function ExecutiveDashboard() {
       <div className="grid grid-cols-3 gap-6">
         <KPICard
           title="Total Transactions"
-          value={cur.transactions.toLocaleString()}
+          value={(cur.transactions ?? 0).toLocaleString()}
           subtitle="Across all traders in 2025"
         />
         <KPICard
@@ -212,7 +227,7 @@ export function ExecutiveDashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis dataKey="year" stroke="#6b6b6b" />
               <YAxis stroke="#6b6b6b" tickFormatter={(v) => `€${(v / 1_000_000).toFixed(1)}M`} />
-              <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+              <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
               <Legend />
               <Bar dataKey="revenue" fill="#0d5c3d" name="Revenue (€)" />
               <Bar dataKey="expense" fill="#10b981" name="Expense (€)" />
@@ -243,7 +258,7 @@ export function ExecutiveDashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis dataKey="year" stroke="#6b6b6b" />
               <YAxis stroke="#6b6b6b" tickFormatter={(v) => `€${(v / 1_000).toFixed(0)}K`} />
-              <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+              <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
               <Legend />
               {persons.map(person => (
                 <Bar key={person} dataKey={person} stackId="a" fill={PERSON_COLORS[person] || "#10b981"} name={person} />
@@ -260,7 +275,7 @@ export function ExecutiveDashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis dataKey="month" stroke="#6b6b6b" />
               <YAxis stroke="#6b6b6b" tickFormatter={(v) => `€${(v / 1_000).toFixed(0)}K`} />
-              <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+              <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
               <Legend />
               <Area type="monotone" dataKey="cashFlow" stroke="#10b981" fill="#a7f3d0" name="Net Margin (€)" />
             </AreaChart>
@@ -275,7 +290,7 @@ export function ExecutiveDashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis type="number" stroke="#6b6b6b" tickFormatter={(v) => `€${(v / 1_000).toFixed(0)}K`} />
               <YAxis type="category" dataKey="product" stroke="#6b6b6b" width={110} />
-              <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+              <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
               <Bar dataKey="margin" fill="#0d5c3d" name="Total Margin (€)" />
             </BarChart>
           </ResponsiveContainer>
@@ -289,7 +304,7 @@ export function ExecutiveDashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis type="number" stroke="#6b6b6b" tickFormatter={(v) => `€${(v / 1_000).toFixed(0)}K`} />
               <YAxis type="category" dataKey="origin" stroke="#6b6b6b" width={110} />
-              <Tooltip formatter={(v: number) => `€${v.toLocaleString()}`} />
+              <Tooltip formatter={(v: number) => v != null ? `€${v.toLocaleString()}` : '—'} />
               <Bar dataKey="margin" fill="#10b981" name="Total Margin (€)" />
             </BarChart>
           </ResponsiveContainer>
@@ -305,7 +320,7 @@ export function ExecutiveDashboard() {
           <div>
             <h3 className="text-xl font-semibold mb-2">Performance Summary &amp; Outlook</h3>
             <p className="text-white/90 mb-4">
-              2025 revenue {cur.revenueYoY != null ? `${pct(cur.revenueYoY)} YoY` : "grew"} to {fmt(cur.totalRevenue)} across {cur.transactions.toLocaleString()} transactions.
+              2025 revenue {cur.revenueYoY != null ? `${pct(cur.revenueYoY)} YoY` : "grew"} to {fmt(cur.totalRevenue)} across {(cur.transactions ?? 0).toLocaleString()} transactions.
               Net margin at {cur.marginPct}%. {cur.topProduct} and {cur.topOrigin} remain the top performers.
             </p>
             <div className="grid grid-cols-4 gap-8 mt-6">
@@ -319,7 +334,7 @@ export function ExecutiveDashboard() {
               </div>
               <div>
                 <div className="text-white/70 text-sm mb-1">Transactions</div>
-                <div className="text-2xl font-semibold">{cur.transactions.toLocaleString()}</div>
+                <div className="text-2xl font-semibold">{(cur.transactions ?? 0).toLocaleString()}</div>
               </div>
               <div>
                 <div className="text-white/70 text-sm mb-1">Margin %</div>
