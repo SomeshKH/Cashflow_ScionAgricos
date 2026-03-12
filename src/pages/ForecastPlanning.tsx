@@ -59,7 +59,7 @@ export function ForecastPlanning() {
       </div>
 
       {/* Upload Section */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-1">Refresh Forecast Data</h3>
@@ -77,7 +77,7 @@ export function ForecastPlanning() {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-4 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <div className="text-sm text-[#6b6b6b] mb-2">{lastForecastRevenue?.year} Revenue Forecast</div>
           <div className="text-3xl font-semibold text-[#1a1a1a] mb-2">
             {lastForecastRevenue?.forecast ? fmt(lastForecastRevenue.forecast) : "—"}
@@ -89,7 +89,7 @@ export function ForecastPlanning() {
             </div>
           )}
         </div>
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <div className="text-sm text-[#6b6b6b] mb-2">{lastForecastExpense?.year} Expense Forecast</div>
           <div className="text-3xl font-semibold text-[#1a1a1a] mb-2">
             {lastForecastExpense?.forecast ? fmt(lastForecastExpense.forecast) : "—"}
@@ -101,7 +101,7 @@ export function ForecastPlanning() {
             </div>
           )}
         </div>
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <div className="text-sm text-[#6b6b6b] mb-2">{lastEbitda?.year} EBITDA Forecast</div>
           <div className="text-3xl font-semibold text-[#1a1a1a] mb-2">
             {lastEbitda?.value ? fmt(lastEbitda.value) : "—"}
@@ -111,7 +111,7 @@ export function ForecastPlanning() {
             <span>Projected margin growth</span>
           </div>
         </div>
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <div className="text-sm text-[#6b6b6b] mb-2">{lastProfit?.year} Net Profit Forecast</div>
           <div className="text-3xl font-semibold text-[#1a1a1a] mb-2">
             {lastProfit?.value ? fmt(lastProfit.value) : "—"}
@@ -125,7 +125,7 @@ export function ForecastPlanning() {
 
       {/* Charts */}
       <div className="grid grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Revenue Projection (€)</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={revenueData}>
@@ -140,7 +140,7 @@ export function ForecastPlanning() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Expense Projection (€)</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={expenseData}>
@@ -155,7 +155,7 @@ export function ForecastPlanning() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Margin Projection (€)</h3>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={ebitdaData}>
@@ -169,7 +169,7 @@ export function ForecastPlanning() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Profit Projection (€)</h3>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={profitData}>
@@ -185,12 +185,12 @@ export function ForecastPlanning() {
       </div>
 
       {/* Data Table */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Revenue Forecast Table</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b-2 border-[#e0e0e0]">
+              <tr className="border-b-2 border-[#e0e0e0] bg-[#e4f5ec]">
                 <th className="text-left py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Year</th>
                 <th className="text-right py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Actual Revenue</th>
                 <th className="text-right py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Forecast Revenue</th>
@@ -199,8 +199,8 @@ export function ForecastPlanning() {
             </thead>
             <tbody>
               {revenueData.map((row, i) => (
-                <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                  <td className="py-4 px-4 text-sm font-medium">{row.year}</td>
+                <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#e8f5f0]">
+                  <td className="py-4 px-4 text-sm font-medium text-[#1a1a1a]">{row.year}</td>
                   <td className="py-4 px-4 text-sm text-right text-[#6b6b6b]">
                     {row.actual != null ? `€${Number(row.actual).toLocaleString()}` : "—"}
                   </td>

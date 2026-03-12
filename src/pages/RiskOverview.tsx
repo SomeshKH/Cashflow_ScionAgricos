@@ -68,7 +68,7 @@ export function RiskOverview() {
 
       {/* Risk Score Cards */}
       <div className="grid grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-[#f5f5f5] rounded-full flex items-center justify-center">
               <AlertTriangle className="w-8 h-8 text-[#f59e0b]" />
@@ -91,7 +91,7 @@ export function RiskOverview() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <div className="flex items-center gap-4">
             <div className={`w-16 h-16 ${getSafetyColor(tradeSafetyStatus)} rounded-full flex items-center justify-center`}>
               <Globe className="w-8 h-8 text-white" />
@@ -104,7 +104,7 @@ export function RiskOverview() {
           </div>
           <div className="mt-4 flex gap-2">
             {["Safe","Moderate","Risky"].map(s => (
-              <div key={s} className={`flex-1 text-center p-2 rounded text-xs ${s === tradeSafetyStatus ? getSafetyColor(s) + " text-white" : "bg-[#f5f5f5]"}`}>
+              <div key={s} className={`flex-1 text-center p-2 rounded text-xs ${s === tradeSafetyStatus ? getSafetyColor(s) + " text-white" : "bg-[#f5f5f5] text-[#1a1a1a]"}`}>
                 <span className="font-medium">{s}</span>
               </div>
             ))}
@@ -113,7 +113,7 @@ export function RiskOverview() {
       </div>
 
       {/* Low Margin Products */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-2 mb-4">
           <TrendingDown className="w-5 h-5 text-[#ef4444]" />
           <h3 className="text-lg font-semibold text-[#1a1a1a]">Low Margin Products</h3>
@@ -125,7 +125,7 @@ export function RiskOverview() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b-2 border-[#e0e0e0]">
+                <tr className="border-b-2 border-[#e0e0e0] bg-[#e4f5ec]">
                   <th className="text-left py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Product</th>
                   <th className="text-left py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Origin</th>
                   <th className="text-right py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Margin %</th>
@@ -134,11 +134,11 @@ export function RiskOverview() {
               </thead>
               <tbody>
                 {lowMargin.map((p: LowMarginProduct, i) => (
-                  <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                    <td className="py-3 px-4 text-sm font-medium">{p.product}</td>
-                    <td className="py-3 px-4 text-sm text-[#6b6b6b]">{p.origin}</td>
+                  <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#e8f5f0]">
+                    <td className="py-3 px-4 text-sm font-medium text-[#1a1a1a]">{p.product}</td>
+                    <td className="py-3 px-4 text-sm text-[#1a1a1a]">{p.origin}</td>
                     <td className="py-3 px-4 text-sm text-right font-semibold text-[#ef4444]">{p.margin}%</td>
-                    <td className="py-3 px-4 text-sm text-right">{p.transactions}</td>
+                    <td className="py-3 px-4 text-sm text-right text-[#1a1a1a]">{p.transactions}</td>
                   </tr>
                 ))}
               </tbody>
@@ -148,7 +148,7 @@ export function RiskOverview() {
       </div>
 
       {/* High Volatility Products */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-2 mb-4">
           <AlertTriangle className="w-5 h-5 text-[#f59e0b]" />
           <h3 className="text-lg font-semibold text-[#1a1a1a]">High Cost Volatility Products</h3>
@@ -160,7 +160,7 @@ export function RiskOverview() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b-2 border-[#e0e0e0]">
+                <tr className="border-b-2 border-[#e0e0e0] bg-[#e4f5ec]">
                   <th className="text-left py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Product</th>
                   <th className="text-right py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Volatility (σ)</th>
                   <th className="text-right py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Avg Margin</th>
@@ -169,11 +169,11 @@ export function RiskOverview() {
               </thead>
               <tbody>
                 {volatile.map((p: VolatileProduct, i) => (
-                  <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                    <td className="py-3 px-4 text-sm font-medium">{p.product}</td>
+                  <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#e8f5f0]">
+                    <td className="py-3 px-4 text-sm font-medium text-[#1a1a1a]">{p.product}</td>
                     <td className="py-3 px-4 text-sm text-right font-semibold text-[#f59e0b]">€{Number(p.volatility).toLocaleString()}</td>
-                    <td className="py-3 px-4 text-sm text-right">€{Number(p.avg_margin).toLocaleString()}</td>
-                    <td className="py-3 px-4 text-sm text-right">{p.active_months}</td>
+                    <td className="py-3 px-4 text-sm text-right text-[#1a1a1a]">€{Number(p.avg_margin).toLocaleString()}</td>
+                    <td className="py-3 px-4 text-sm text-right text-[#1a1a1a]">{p.active_months}</td>
                   </tr>
                 ))}
               </tbody>
@@ -183,7 +183,7 @@ export function RiskOverview() {
       </div>
 
       {/* Currency Exposure */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-2 mb-4">
           <DollarSign className="w-5 h-5 text-[#0d5c3d]" />
           <h3 className="text-lg font-semibold text-[#1a1a1a]">Currency Exposure</h3>
@@ -232,7 +232,7 @@ export function RiskOverview() {
             },
           ].map((rec, i) => (
             <li key={i} className="flex items-start gap-3">
-              <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-6 h-6 bg-[#f0faf6]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-xs font-semibold">{i + 1}</span>
               </div>
               <div>

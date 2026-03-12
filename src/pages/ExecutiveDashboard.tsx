@@ -220,7 +220,7 @@ export function ExecutiveDashboard() {
       {/* Charts */}
       <div className="grid grid-cols-2 gap-6">
         {/* Revenue vs Expense 3-year */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Revenue vs Expense (Multi-Year Trend)</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={yearlyTotals.map(y => ({ ...y, year: String(y.year) }))}>
@@ -236,7 +236,7 @@ export function ExecutiveDashboard() {
         </div>
 
         {/* Profit Margin % trend */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Profit Margin % Trend</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={yearlyProfitMargin}>
@@ -251,7 +251,7 @@ export function ExecutiveDashboard() {
         </div>
 
         {/* Margin by Trader (stacked bar) */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Margin by Trader per Year</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={personStackedData}>
@@ -268,7 +268,7 @@ export function ExecutiveDashboard() {
         </div>
 
         {/* Monthly Net Cash Flow */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Monthly Net Cash Flow 2025</h3>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={cashFlowPreview}>
@@ -283,7 +283,7 @@ export function ExecutiveDashboard() {
         </div>
 
         {/* Top Products by Margin */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Top Products by Margin</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={products.slice(0, 8)} layout="vertical">
@@ -297,7 +297,7 @@ export function ExecutiveDashboard() {
         </div>
 
         {/* Top Origins by Margin */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Top Origins by Margin</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={origins.slice(0, 8)} layout="vertical">
@@ -314,7 +314,7 @@ export function ExecutiveDashboard() {
       {/* Summary Card */}
       <div className="bg-gradient-to-r from-[#0d5c3d] to-[#10b981] rounded-xl p-8 text-white">
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div className="w-12 h-12 bg-[#f0faf6]/20 rounded-lg flex items-center justify-center flex-shrink-0">
             <ShoppingCart className="w-6 h-6" />
           </div>
           <div>

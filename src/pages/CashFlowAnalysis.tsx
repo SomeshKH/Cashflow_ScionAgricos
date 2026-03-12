@@ -90,7 +90,7 @@ export function CashFlowAnalysis() {
       </div>
 
       {/* View Switcher */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex gap-4 mb-4">
           {(["scenario", "comparison"] as const).map(v => (
             <button
@@ -99,7 +99,7 @@ export function CashFlowAnalysis() {
               className={`px-5 py-2 rounded-lg border-2 font-semibold transition-colors ${
                 yearView === v
                   ? "border-[#0d5c3d] bg-[#e8f5f0] text-[#0d5c3d]"
-                  : "border-[#e0e0e0] hover:border-[#0d5c3d]"
+                  : "border-[#e0e0e0] hover:border-[#0d5c3d] text-[#1a1a1a]"
               }`}
             >
               {v === "scenario" ? "2025 Scenarios" : "Year-on-Year Comparison"}
@@ -118,7 +118,7 @@ export function CashFlowAnalysis() {
                   className={`flex-1 py-3 px-4 rounded-lg border-2 transition-colors ${
                     scenario === s
                       ? "border-[#0d5c3d] bg-[#e8f5f0] text-[#0d5c3d]"
-                      : "border-[#e0e0e0] hover:border-[#0d5c3d]"
+                      : "border-[#e0e0e0] hover:border-[#0d5c3d] text-[#1a1a1a]"
                   }`}
                 >
                   <div className="font-semibold capitalize mb-1">{s}</div>
@@ -137,7 +137,7 @@ export function CashFlowAnalysis() {
       {yearView === "scenario" ? (
         <>
           <div className="grid grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="flex items-center gap-2 text-sm text-[#6b6b6b] mb-2">
                 <TrendingUp className="w-4 h-4" />
                 <span>Total Inflows</span>
@@ -146,7 +146,7 @@ export function CashFlowAnalysis() {
                 €{(totalInflows / 1_000_000).toFixed(2)}M
               </div>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="flex items-center gap-2 text-sm text-[#6b6b6b] mb-2">
                 <TrendingDown className="w-4 h-4" />
                 <span>Total Outflows</span>
@@ -155,7 +155,7 @@ export function CashFlowAnalysis() {
                 €{(totalOutflows / 1_000_000).toFixed(2)}M
               </div>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="flex items-center gap-2 text-sm text-[#6b6b6b] mb-2">
                 <DollarSign className="w-4 h-4" />
                 <span>Net Cash Flow</span>
@@ -164,7 +164,7 @@ export function CashFlowAnalysis() {
                 €{(totalNet / 1_000).toFixed(0)}K
               </div>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="text-sm text-[#6b6b6b] mb-2">Ending Balance</div>
               <div className="text-3xl font-semibold text-[#0d5c3d]">
                 €{(endingBalance / 1_000).toFixed(0)}K
@@ -173,7 +173,7 @@ export function CashFlowAnalysis() {
           </div>
 
           <div className="grid grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Monthly Inflow vs Outflow</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={data}>
@@ -188,7 +188,7 @@ export function CashFlowAnalysis() {
               </ResponsiveContainer>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Cumulative Cash Balance</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={data}>
@@ -205,7 +205,7 @@ export function CashFlowAnalysis() {
 
           <div className="bg-gradient-to-r from-[#0d5c3d] to-[#10b981] rounded-xl p-8 text-white">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-[#f0faf6]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <DollarSign className="w-6 h-6" />
               </div>
               <div className="flex-1">
@@ -229,12 +229,12 @@ export function CashFlowAnalysis() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Monthly Cash Flow Table</h3>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b-2 border-[#e0e0e0]">
+                  <tr className="border-b-2 border-[#e0e0e0] bg-[#e4f5ec]">
                     <th className="text-left py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Month</th>
                     <th className="text-right py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Inflows</th>
                     <th className="text-right py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Outflows</th>
@@ -244,8 +244,8 @@ export function CashFlowAnalysis() {
                 </thead>
                 <tbody>
                   {data.map((row, i) => (
-                    <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                      <td className="py-4 px-4 text-sm font-medium">{row.month}</td>
+                    <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#e8f5f0]">
+                      <td className="py-4 px-4 text-sm font-medium text-[#1a1a1a]">{row.month}</td>
                       <td className="py-4 px-4 text-sm text-right text-[#10b981]">€{(row.inflows ?? 0).toLocaleString()}</td>
                       <td className="py-4 px-4 text-sm text-right text-[#ef4444]">€{(row.outflows ?? 0).toLocaleString()}</td>
                       <td className={`py-4 px-4 text-sm text-right font-semibold ${(row.net ?? 0) >= 0 ? "text-[#10b981]" : "text-[#ef4444]"}`}>
@@ -265,7 +265,7 @@ export function CashFlowAnalysis() {
         <>
           <div className="grid grid-cols-3 gap-6">
             {yearlyTotals.map(yr => (
-              <div key={yr.year} className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+              <div key={yr.year} className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
                 <div className="text-sm text-[#6b6b6b] mb-1">Net Margin {yr.year}</div>
                 <div className="text-3xl font-semibold text-[#0d5c3d]">
                   €{(Number(yr.margin) / 1_000).toFixed(0)}K
@@ -275,7 +275,7 @@ export function CashFlowAnalysis() {
             ))}
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">
               Monthly Net Margin — 2023 vs 2024 vs 2025
             </h3>

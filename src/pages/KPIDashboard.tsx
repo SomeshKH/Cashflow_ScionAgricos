@@ -146,7 +146,7 @@ export function KPIDashboard() {
         <p className="text-[#6b6b6b]">Key performance indicators computed from real trading data ({CURRENT_YEAR} vs {PREV_YEAR})</p>
       </div>
 
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-semibold text-[#1a1a1a]">Comparison Period</h3>
           <div className="flex gap-2">
@@ -173,7 +173,7 @@ export function KPIDashboard() {
           const positive = isPositive(key, val.current, val.previous);
           const change   = +(val.current - val.previous).toFixed(1);
           return (
-            <div key={key} className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div key={key} className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="text-sm text-[#6b6b6b] mb-2">{key}</div>
               <div className="text-3xl font-semibold text-[#1a1a1a] mb-2">
                 {val.current}{val.unit}
@@ -195,7 +195,7 @@ export function KPIDashboard() {
       {/* Trend Charts */}
       <div className="grid grid-cols-2 gap-6">
         {chartPairs.map(({ title, data: chartData, key: keys, color }) => (
-          <div key={title} className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div key={title} className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">{title}</h3>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={chartData}>
@@ -219,7 +219,7 @@ export function KPIDashboard() {
         ))}
 
         {/* Return on Capital – bar chart for yearly view */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Return on Capital % (Yearly)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={yearlyTotals.map(y => ({

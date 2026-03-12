@@ -80,7 +80,7 @@ export function ScenarioSimulator() {
       </div>
 
       {/* Controls */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-lg font-semibold text-[#1a1a1a]">Simulation Parameters</h3>
           <button
@@ -180,7 +180,7 @@ export function ScenarioSimulator() {
       {/* Comparison */}
       <div className="grid grid-cols-2 gap-6">
         {/* Current */}
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-6">Current Scenario (2025 Actual)</h3>
           <div className="space-y-6">
             <div>
@@ -229,7 +229,7 @@ export function ScenarioSimulator() {
       </div>
 
       {/* Impact Summary */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Impact Summary</h3>
         <div className="grid grid-cols-4 gap-6">
           {[

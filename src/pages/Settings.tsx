@@ -9,7 +9,7 @@ export function Settings() {
       </div>
 
       {/* Profile Settings */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-[#e8f5f0] rounded-lg flex items-center justify-center">
             <User className="w-5 h-5 text-[#0d5c3d]" />
@@ -24,7 +24,7 @@ export function Settings() {
               <input
                 type="text"
                 defaultValue="John Doe"
-                className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg"
+                className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]"
               />
             </div>
             <div>
@@ -32,7 +32,7 @@ export function Settings() {
               <input
                 type="email"
                 defaultValue="john.doe@scionagricos.com"
-                className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg"
+                className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@ export function Settings() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Role</label>
-              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
                 <option>Financial Manager</option>
                 <option>Executive</option>
                 <option>Analyst</option>
@@ -48,7 +48,7 @@ export function Settings() {
             </div>
             <div>
               <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Department</label>
-              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
                 <option>Finance</option>
                 <option>Operations</option>
                 <option>Executive</option>
@@ -59,7 +59,7 @@ export function Settings() {
       </div>
 
       {/* Notification Settings */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-[#e8f5f0] rounded-lg flex items-center justify-center">
             <Bell className="w-5 h-5 text-[#0d5c3d]" />
@@ -74,7 +74,7 @@ export function Settings() {
               <div className="text-sm text-[#6b6b6b]">Receive email alerts for important updates</div>
             </div>
             <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#0d5c3d]">
-              <span className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-6" />
+              <span className="inline-block h-4 w-4 transform rounded-full bg-[#f0faf6] transition-transform translate-x-6" />
             </button>
           </div>
 
@@ -84,7 +84,7 @@ export function Settings() {
               <div className="text-sm text-[#6b6b6b]">Get notified about shipment status changes</div>
             </div>
             <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#0d5c3d]">
-              <span className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-6" />
+              <span className="inline-block h-4 w-4 transform rounded-full bg-[#f0faf6] transition-transform translate-x-6" />
             </button>
           </div>
 
@@ -94,7 +94,7 @@ export function Settings() {
               <div className="text-sm text-[#6b6b6b]">Alerts for margin drops or cash flow issues</div>
             </div>
             <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#0d5c3d]">
-              <span className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-6" />
+              <span className="inline-block h-4 w-4 transform rounded-full bg-[#f0faf6] transition-transform translate-x-6" />
             </button>
           </div>
 
@@ -104,14 +104,14 @@ export function Settings() {
               <div className="text-sm text-[#6b6b6b]">Weekly summary of key metrics</div>
             </div>
             <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#e0e0e0]">
-              <span className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1" />
+              <span className="inline-block h-4 w-4 transform rounded-full bg-[#f0faf6] transition-transform translate-x-1" />
             </button>
           </div>
         </div>
       </div>
 
       {/* Data & Export Settings */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-[#e8f5f0] rounded-lg flex items-center justify-center">
             <Database className="w-5 h-5 text-[#0d5c3d]" />
@@ -122,7 +122,7 @@ export function Settings() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Default Currency</label>
-            <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+            <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
               <option>USD ($)</option>
               <option>EUR (€)</option>
               <option>GBP (£)</option>
@@ -131,7 +131,7 @@ export function Settings() {
 
           <div>
             <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Date Format</label>
-            <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+            <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
               <option>MM/DD/YYYY</option>
               <option>DD/MM/YYYY</option>
               <option>YYYY-MM-DD</option>
@@ -140,7 +140,7 @@ export function Settings() {
 
           <div>
             <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Export Format</label>
-            <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+            <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
               <option>Excel (.xlsx)</option>
               <option>CSV (.csv)</option>
               <option>PDF (.pdf)</option>
@@ -150,7 +150,7 @@ export function Settings() {
       </div>
 
       {/* Security Settings */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-[#e8f5f0] rounded-lg flex items-center justify-center">
             <Shield className="w-5 h-5 text-[#0d5c3d]" />
@@ -165,7 +165,7 @@ export function Settings() {
               <div className="text-sm text-[#6b6b6b]">Add an extra layer of security</div>
             </div>
             <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#e0e0e0]">
-              <span className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1" />
+              <span className="inline-block h-4 w-4 transform rounded-full bg-[#f0faf6] transition-transform translate-x-1" />
             </button>
           </div>
 
@@ -176,7 +176,7 @@ export function Settings() {
 
           <div className="py-3">
             <div className="font-medium text-[#1a1a1a] mb-2">Session Timeout</div>
-            <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+            <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
               <option>15 minutes</option>
               <option>30 minutes</option>
               <option>1 hour</option>
@@ -187,7 +187,7 @@ export function Settings() {
       </div>
 
       {/* Company Settings */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <h3 className="text-lg font-semibold text-[#1a1a1a] mb-6">Company Information</h3>
 
         <div className="space-y-4">
@@ -196,14 +196,14 @@ export function Settings() {
             <input
               type="text"
               defaultValue="ScionAgricos"
-              className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg"
+              className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Fiscal Year Start</label>
-              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
                 <option>January</option>
                 <option>April</option>
                 <option>July</option>
@@ -212,7 +212,7 @@ export function Settings() {
             </div>
             <div>
               <label className="block text-sm font-medium text-[#1a1a1a] mb-2">Time Zone</label>
-              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white">
+              <select className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]">
                 <option>UTC</option>
                 <option>EST (UTC-5)</option>
                 <option>PST (UTC-8)</option>

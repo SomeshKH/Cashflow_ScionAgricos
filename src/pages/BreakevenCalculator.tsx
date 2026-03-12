@@ -77,7 +77,7 @@ export function BreakevenCalculator() {
         {/* Inputs */}
         <div className="col-span-2 space-y-6">
           {/* Product & Origin Selection */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Product & Origin</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -85,7 +85,7 @@ export function BreakevenCalculator() {
                 <select
                   value={product}
                   onChange={e => setProduct(e.target.value)}
-                  className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white"
+                  className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]"
                 >
                   {productList.map(p => (
                     <option key={p} value={p}>{p}</option>
@@ -97,7 +97,7 @@ export function BreakevenCalculator() {
                 <select
                   value={origin}
                   onChange={e => setOrigin(e.target.value)}
-                  className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white"
+                  className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]"
                 >
                   {originList.map(o => (
                     <option key={o} value={o}>{o}</option>
@@ -108,7 +108,7 @@ export function BreakevenCalculator() {
           </div>
 
           {/* Cost Inputs */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Cost Inputs</h3>
             <div className="space-y-4">
               {[
@@ -124,7 +124,7 @@ export function BreakevenCalculator() {
                     <input
                       type="number" step={step} value={value}
                       onChange={e => setter(Number(e.target.value))}
-                      className="w-32 px-3 py-1 border border-[#e0e0e0] rounded-lg text-right"
+                      className="w-32 px-3 py-1 border border-[#e0e0e0] rounded-lg text-right text-[#1a1a1a] bg-[#f0faf6]"
                     />
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export function BreakevenCalculator() {
           </div>
 
           {/* Cost Breakdown */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Cost Breakdown</h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between py-2 border-b border-[#e0e0e0]">
@@ -161,7 +161,7 @@ export function BreakevenCalculator() {
           {/* Break-even Results */}
           <div className="bg-gradient-to-br from-[#0d5c3d] to-[#10b981] rounded-xl p-6 text-white">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#f0faf6]/20 rounded-lg flex items-center justify-center">
                 <Calculator className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-semibold">Break-even Analysis</h3>
@@ -184,7 +184,7 @@ export function BreakevenCalculator() {
           </div>
 
           {/* Target Margin Results */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-[#e8f5f0] rounded-lg flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-[#0d5c3d]" />
@@ -214,7 +214,7 @@ export function BreakevenCalculator() {
           </div>
 
           {/* Quick Stats */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-sm font-semibold text-[#1a1a1a] mb-4">Quick Stats</h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between text-sm">

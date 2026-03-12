@@ -106,7 +106,7 @@ export function HistoricalShipmentAnalytics() {
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Filters</h3>
         <div className="grid grid-cols-3 gap-4">
           {[
@@ -119,7 +119,7 @@ export function HistoricalShipmentAnalytics() {
               <select
                 value={value}
                 onChange={e => setter(e.target.value)}
-                className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-white"
+                className="w-full px-4 py-2 border border-[#e0e0e0] rounded-lg bg-[#f0faf6] text-[#1a1a1a]"
               >
                 <option value="all">All {label}s</option>
                 {options.map(o => <option key={o} value={o}>{o}</option>)}
@@ -145,7 +145,7 @@ export function HistoricalShipmentAnalytics() {
 
       {/* Charts */}
       <div className="grid grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Revenue Trend (€)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={revenueData}>
@@ -159,7 +159,7 @@ export function HistoricalShipmentAnalytics() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Cost Trend (€)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={costData}>
@@ -173,7 +173,7 @@ export function HistoricalShipmentAnalytics() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Margin % Trend</h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={profitPctData}>
@@ -187,7 +187,7 @@ export function HistoricalShipmentAnalytics() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Revenue by Product (Top 8)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <PieChart>
@@ -210,7 +210,7 @@ export function HistoricalShipmentAnalytics() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Revenue by Origin</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={revenueByOrigin} layout="vertical">
@@ -223,7 +223,7 @@ export function HistoricalShipmentAnalytics() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+        <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
           <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Margin by Trader per Year</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={personComparisonData}>
@@ -241,7 +241,7 @@ export function HistoricalShipmentAnalytics() {
       </div>
 
       {/* Data Table */}
-      <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+      <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
         <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">
           Shipment Records Table
           <span className="ml-2 text-sm font-normal text-[#6b6b6b]">
@@ -251,20 +251,20 @@ export function HistoricalShipmentAnalytics() {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#e0e0e0]">
+              <tr className="border-b border-[#e0e0e0] bg-[#e4f5ec]">
                 {["Year","Product","Origin","Tx","Revenue","Net Margin","Margin %"].map(h => (
-                  <th key={h} className={`py-3 px-4 text-sm font-medium text-[#6b6b6b] ${h==="Year"||h==="Product"||h==="Origin" ? "text-left" : "text-right"}`}>{h}</th>
+                  <th key={h} className={`py-3 px-4 text-sm font-semibold text-[#1a1a1a] ${h==="Year"||h==="Product"||h==="Origin" ? "text-left" : "text-right"}`}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {filtered.map((row, idx) => (
                 <tr key={idx} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                  <td className="py-3 px-4 text-sm">{row.year}</td>
-                  <td className="py-3 px-4 text-sm">{row.product}</td>
-                  <td className="py-3 px-4 text-sm">{row.origin}</td>
-                  <td className="py-3 px-4 text-sm text-right">{row.transactions}</td>
-                  <td className="py-3 px-4 text-sm text-right">€{Number(row.revenue).toLocaleString()}</td>
+                  <td className="py-3 px-4 text-sm text-[#1a1a1a]">{row.year}</td>
+                  <td className="py-3 px-4 text-sm text-[#1a1a1a]">{row.product}</td>
+                  <td className="py-3 px-4 text-sm text-[#1a1a1a]">{row.origin}</td>
+                  <td className="py-3 px-4 text-sm text-right text-[#1a1a1a]">{row.transactions}</td>
+                  <td className="py-3 px-4 text-sm text-right text-[#1a1a1a]">€{Number(row.revenue).toLocaleString()}</td>
                   <td className="py-3 px-4 text-sm text-right text-[#10b981] font-medium">€{Number(row.margin).toLocaleString()}</td>
                   <td className="py-3 px-4 text-sm text-right font-semibold text-[#0d5c3d]">{row.marginPct}%</td>
                 </tr>

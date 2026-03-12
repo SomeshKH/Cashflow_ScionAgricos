@@ -114,11 +114,11 @@ export function SeasonalCalendar() {
       {/* Monthly View */}
       {activeTab === "monthly" && (
         <div className="space-y-6">
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b-2 border-[#e0e0e0]">
+                  <tr className="border-b-2 border-[#e0e0e0] bg-[#e4f5ec]">
                     <th className="text-left py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Month</th>
                     <th className="text-left py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Season</th>
                     <th className="text-center py-4 px-4 text-sm font-semibold text-[#1a1a1a]">Export Level</th>
@@ -129,8 +129,8 @@ export function SeasonalCalendar() {
                 </thead>
                 <tbody>
                   {monthlyData.map((row, i) => (
-                    <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                      <td className="py-4 px-4 text-sm font-medium">{row.name}</td>
+                    <tr key={i} className="border-b border-[#e0e0e0] hover:bg-[#e8f5f0]">
+                      <td className="py-4 px-4 text-sm font-medium text-[#1a1a1a]">{row.name}</td>
                       <td className="py-4 px-4 text-sm">
                         <span className="px-3 py-1 bg-[#e8f5f0] text-[#0d5c3d] rounded-full text-xs font-medium">
                           {row.season}
@@ -146,7 +146,7 @@ export function SeasonalCalendar() {
                           {row.shipping}
                         </span>
                       </td>
-                      <td className="py-4 px-4 text-center text-sm">{row.transit} days</td>
+                      <td className="py-4 px-4 text-center text-sm text-[#1a1a1a]">{row.transit} days</td>
                       <td className="py-4 px-4 text-right text-sm font-semibold text-[#0d5c3d]">
                         {row.margin.toFixed(1)}%
                       </td>
@@ -159,17 +159,17 @@ export function SeasonalCalendar() {
 
           {/* Key Insights */}
           <div className="grid grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="text-sm text-[#6b6b6b] mb-2">Peak Export Season</div>
               <div className="text-2xl font-semibold text-[#1a1a1a] mb-1">{peakLabel}</div>
               <div className="text-sm text-[#10b981]">{peakMonths.length} months optimal window</div>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="text-sm text-[#6b6b6b] mb-2">Best Margin Month</div>
               <div className="text-2xl font-semibold text-[#1a1a1a] mb-1">{bestMonth?.name ?? "—"}</div>
               <div className="text-sm text-[#10b981]">{bestMonth?.margin.toFixed(1)}% average margin</div>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+            <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
               <div className="text-sm text-[#6b6b6b] mb-2">Shortest Transit</div>
               <div className="text-2xl font-semibold text-[#1a1a1a] mb-1">{shortestTransit?.name ?? "—"}</div>
               <div className="text-sm text-[#10b981]">{shortestTransit?.transit} days average</div>
@@ -181,7 +181,7 @@ export function SeasonalCalendar() {
       {/* Weekly View */}
       {activeTab === "weekly" && (
         <div className="space-y-6">
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">52-Week Margin Heatmap</h3>
             <div className="grid grid-cols-13 gap-2">
               {weeklyData.map(week => (
@@ -197,7 +197,7 @@ export function SeasonalCalendar() {
           </div>
 
           {/* Legend */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Legend</h3>
             <div className="grid grid-cols-5 gap-4">
               {[
@@ -216,11 +216,11 @@ export function SeasonalCalendar() {
           </div>
 
           {/* Weekly Data Table */}
-          <div className="bg-white rounded-xl p-6 border border-[#e0e0e0]">
+          <div className="bg-[#f0faf6] rounded-xl p-6 border border-[#e0e0e0]">
             <h3 className="text-lg font-semibold text-[#1a1a1a] mb-4">Weekly Analysis</h3>
             <div className="overflow-x-auto max-h-96">
               <table className="w-full">
-                <thead className="sticky top-0 bg-white">
+                <thead className="sticky top-0 bg-[#e4f5ec]">
                   <tr className="border-b-2 border-[#e0e0e0]">
                     <th className="text-left py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Week</th>
                     <th className="text-left py-3 px-4 text-sm font-semibold text-[#1a1a1a]">Harvest Status</th>
@@ -231,11 +231,11 @@ export function SeasonalCalendar() {
                 </thead>
                 <tbody>
                   {weeklyData.map(week => (
-                    <tr key={week.week} className="border-b border-[#e0e0e0] hover:bg-[#f5f5f5]">
-                      <td className="py-3 px-4 text-sm font-medium">Week {week.week}</td>
-                      <td className="py-3 px-4 text-sm">{week.harvest}</td>
-                      <td className="py-3 px-4 text-sm">{week.supply}</td>
-                      <td className="py-3 px-4 text-sm">{week.shipping}</td>
+                    <tr key={week.week} className="border-b border-[#e0e0e0] hover:bg-[#e8f5f0]">
+                      <td className="py-3 px-4 text-sm font-medium text-[#1a1a1a]">Week {week.week}</td>
+                      <td className="py-3 px-4 text-sm text-[#1a1a1a]">{week.harvest}</td>
+                      <td className="py-3 px-4 text-sm text-[#1a1a1a]">{week.supply}</td>
+                      <td className="py-3 px-4 text-sm text-[#1a1a1a]">{week.shipping}</td>
                       <td className="py-3 px-4 text-sm text-right font-semibold text-[#0d5c3d]">
                         {week.margin.toFixed(1)}%
                       </td>
