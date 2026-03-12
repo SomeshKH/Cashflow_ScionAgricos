@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(curl -s http://localhost:8000/api/yearly-totals)",
+      "Bash(curl -s -H \"X-API-Key: wrongkey\" http://localhost:8000/api/yearly-totals)",
+      "Bash(npx kill-port 8000)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(npm install xlsx)"
+    ]
+  }
+}
